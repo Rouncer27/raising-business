@@ -5,7 +5,9 @@ import DarkGreenTop from "../Graphics/DarkGreenTop"
 import DarkGreenBottom from "../Graphics/DarkGreenBottom"
 
 const ListenNowStyled = styled.section`
+  position: relative;
   background-color: var(--shadow);
+  z-index: 15;
 
   .wrapper {
     ${standardWrapper};

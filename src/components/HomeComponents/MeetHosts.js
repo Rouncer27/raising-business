@@ -10,9 +10,12 @@ import {
 } from "../../styles/helpers"
 import MeetBackground from "./MeetBackground"
 import WhitePineBackground from "../Graphics/WhitePineBackground"
+import Suzy from "../Images/Suzy"
+import Trevor from "../Images/Trevor"
 
 const MeetHostsStyled = styled.section`
   position: relative;
+  margin-bottom: 5rem;
   .wrapper {
     ${medWrapper};
     position: relative;
@@ -70,7 +73,28 @@ const MeetHostsStyled = styled.section`
       }
 
       &__image {
-        min-height: 35rem;
+        position: relative;
+        margin-top: 5rem;
+        margin-bottom: 5rem;
+
+        &--inner {
+          position: relative;
+          max-width: 25rem;
+          max-height: 25rem;
+          margin: auto;
+          z-index: 5;
+        }
+
+        &--bg {
+          position: absolute;
+          top: -1rem;
+          right: -3rem;
+          width: 25rem;
+          height: 25rem;
+          background-color: var(--primary);
+          border-radius: 50%;
+          z-index: -1;
+        }
       }
 
       h3 {
@@ -94,6 +118,11 @@ const MeetHostsStyled = styled.section`
       @media (min-width: 768px) {
         margin-left: 6rem;
       }
+
+      .meetHost__image--bg {
+        right: auto;
+        left: -2rem;
+      }
     }
   }
 
@@ -103,6 +132,7 @@ const MeetHostsStyled = styled.section`
     }
 
     &__link {
+      margin-top: 10rem;
       text-align: center;
 
       a {
@@ -123,7 +153,12 @@ const MeetHosts = () => {
         </div>
         <div className="meetHosts">
           <div className="meetHost meetTrev">
-            <div className="meetHost__image"></div>
+            <div className="meetHost__image">
+              <div className="meetHost__image--inner">
+                <Trevor />
+                <div className="meetHost__image--bg" />
+              </div>
+            </div>
             <div>
               <h3>Trevor Rounce</h3>
               <p>
@@ -138,7 +173,12 @@ const MeetHosts = () => {
             </div>
           </div>
           <div className="meetHost meetSuzy">
-            <div className="meetHost__image"></div>
+            <div className="meetHost__image">
+              <div className="meetHost__image--inner">
+                <Suzy />
+                <div className="meetHost__image--bg" />
+              </div>
+            </div>
             <div>
               <h3>Suzy Rounce</h3>
               <p>
