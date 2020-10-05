@@ -4,6 +4,7 @@ import styled from "styled-components"
 import Logo from "./Logos/Logo"
 import { medWrapper, B2LightGreen, BtnMainAlt } from "../styles/helpers/index"
 import HeaderAlt from "./Graphics/HeaderAlt"
+import scrollTo from "gatsby-plugin-smoothscroll"
 
 const HeaderStyled = styled.header`
   position: ${props => (props.absPosition ? "absolute" : "relative")};
@@ -90,11 +91,22 @@ const HeaderStyled = styled.header`
       margin-bottom: 5vw;
     }
 
-    a {
+    a,
+    button {
       ${B2LightGreen};
       margin: auto 3rem;
       padding: 0 2rem;
+      background: transparent;
+      border: none;
       text-transform: uppercase;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      &:focus {
+        outline: none;
+      }
 
       &:hover {
         color: var(--white);
@@ -146,7 +158,14 @@ const Header = props => {
         </div>
         <nav className="mainNav">
           <Link to="/episodes">Episodes</Link>
-          <Link to="/contact">Contact</Link>
+          <button
+            type="button"
+            onClick={() => {
+              scrollTo(`#contactFooter`)
+            }}
+          >
+            Contact
+          </button>
           <Link className="callToAct" to="/">
             Listen To The Podcast
           </Link>

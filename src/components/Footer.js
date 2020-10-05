@@ -97,7 +97,7 @@ const FooterStyled = styled.footer`
 
 const Footer = () => {
   return (
-    <FooterStyled>
+    <FooterStyled id="contactFooter">
       <FooterWave />
       <div className="wrapper">
         <div className="footerContact">
