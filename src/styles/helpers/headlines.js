@@ -44,3 +44,8 @@ export const H2White = `
   ${H2Base};
   color: var(--white);
 `
+
+export const H2Brown = `
+  ${H2Base};
+  color: var(--brown);
+`
