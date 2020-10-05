@@ -3,9 +3,10 @@ import React from "react"
 import styled from "styled-components"
 import Logo from "./Logos/Logo"
 import { medWrapper, B2LightGreen, BtnMainAlt } from "../styles/helpers/index"
+import HeaderAlt from "./Graphics/HeaderAlt"
 
 const HeaderStyled = styled.header`
-  position: absolute;
+  position: ${props => (props.absPosition ? "absolute" : "relative")};
   top: 0;
   left: 0;
   width: 100%;
@@ -13,7 +14,9 @@ const HeaderStyled = styled.header`
 
   .wrapper {
     ${medWrapper};
+    position: ${props => (props.absPosition ? "relative" : "absolute")};
     align-items: flex-end;
+    z-index: 5;
 
     @media (min-width: 768px) {
       align-items: center;
@@ -30,6 +33,29 @@ const HeaderStyled = styled.header`
 
     @media (min-width: 1600px) {
       max-width: 155rem;
+    }
+  }
+
+  .backgroundImage {
+    position: relative;
+    width: 100%;
+    @media (min-width: 768px) {
+      top: -3rem;
+    }
+
+    @media (min-width: 1025px) {
+      top: -2rem;
+    }
+
+    @media (min-width: 1250px) {
+      top: -2.5vw;
+    }
+
+    @media (min-width: 1375px) {
+      top: -4vw;
+    }
+    @media (min-width: 1700px) {
+      top: -5.5vw;
     }
   }
 
@@ -104,26 +130,34 @@ const HeaderStyled = styled.header`
   }
 `
 
-const Header = ({ siteTitle }) => (
-  <HeaderStyled>
-    <div className="wrapper">
-      <div className="logo">
-        <h1>
-          <Link to="/">
-            <Logo />
-            <span>{siteTitle}</span>
+const Header = props => {
+  const siteTitle = props.siteTitle
+  const absPosition = props?.location?.pathname === "/" ? true : false
+  return (
+    <HeaderStyled absPosition={absPosition}>
+      <div className="wrapper">
+        <div className="logo">
+          <h1>
+            <Link to="/">
+              <Logo />
+              <span>{siteTitle}</span>
+            </Link>
+          </h1>
+        </div>
+        <nav className="mainNav">
+          <Link to="/episodes">Episodes</Link>
+          <Link to="/contact">Contact</Link>
+          <Link className="callToAct" to="/">
+            Listen To The Podcast
           </Link>
-        </h1>
+        </nav>
       </div>
-      <nav className="mainNav">
-        <Link to="/episodes">Episodes</Link>
-        <Link to="/contact">Contact</Link>
-        <Link className="callToAct" to="/">
-          Listen To The Podcast
-        </Link>
-      </nav>
-    </div>
-  </HeaderStyled>
-)
-
+      {!absPosition && (
+        <div className="backgroundImage">
+          <HeaderAlt />
+        </div>
+      )}
+    </HeaderStyled>
+  )
+}
 export default Header

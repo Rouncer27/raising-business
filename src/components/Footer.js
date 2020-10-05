@@ -3,6 +3,9 @@ import styled from "styled-components"
 import { standardWrapper, H2Brown, B1Pine } from "../styles/helpers"
 import FooterWave from "./Graphics/FooterWave"
 import LogoFooter from "./Logos/LogoFooter"
+import Mic from "./Icon/Mic"
+import Twitter from "./Icon/Twitter"
+import Instagram from "./Icon/Instagram"
 
 const FooterStyled = styled.footer`
   background-color: var(--accent);
@@ -41,9 +44,13 @@ const FooterStyled = styled.footer`
 
     &__logo {
       width: 100%;
+      max-width: 20rem;
+      margin-bottom: 3rem;
 
       @media (min-width: 768px) {
         width: calc(25%);
+        max-width: 100%;
+        margin-bottom: 0;
       }
     }
 
@@ -58,6 +65,32 @@ const FooterStyled = styled.footer`
       p {
         ${B1Pine};
       }
+
+      &--icons {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+
+        li {
+          width: 3.5rem;
+          margin-right: 1rem;
+
+          a {
+            display: block;
+
+            .gatsby-image-wrapper {
+              transition: all 0.3s ease-out;
+            }
+
+            &:hover {
+              .gatsby-image-wrapper {
+                opacity: 0.5;
+              }
+            }
+          }
+        }
+      }
     }
   }
 `
@@ -70,7 +103,6 @@ const Footer = () => {
         <div className="footerContact">
           <h3>Sign up for future guides &#8226; Worksheets</h3>
         </div>
-
         <div className="footerGuest">
           <div className="footerGuest__title">
             <h3>Want to be a guest or sponsor an episode?</h3>
@@ -84,9 +116,20 @@ const Footer = () => {
               podcast@raisingabusiness.ca on why you want to be a guest on an
               upcoming episode or if you'd like to be a sponsor.
             </p>
-            <ul>
-              <li>instagram</li>
-              <li>twitter</li>
+            <ul className="footerGuest__social--icons">
+              <li>
+                <Mic />
+              </li>
+              <li>
+                <a href="https://instagram.com">
+                  <Instagram />
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com">
+                  <Twitter />
+                </a>
+              </li>
             </ul>
           </div>
         </div>
