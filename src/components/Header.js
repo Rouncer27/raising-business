@@ -35,6 +35,8 @@ const HeaderStyled = styled.header`
 
   .logo {
     width: calc(100%);
+    max-width: 25rem;
+    margin: 2rem auto;
 
     @media (min-width: 768px) {
       width: calc(20% - 2rem);
@@ -49,16 +51,17 @@ const HeaderStyled = styled.header`
   }
 
   .mainNav {
-    display: flex;
+    display: none;
     justify-content: flex-end;
     width: calc(100%);
 
     @media (min-width: 768px) {
+      display: flex;
       width: calc(80%);
     }
 
     @media (min-width: 1025px) {
-      margin-bottom: 3vw;
+      margin-bottom: 5vw;
     }
 
     a {
@@ -74,17 +77,28 @@ const HeaderStyled = styled.header`
 
     .callToAct {
       ${BtnMainAlt};
+      margin: auto 0 auto 3rem;
+      padding: 0.75rem 2vw;
+      background-color: var(--tertiary);
+      color: var(--white);
+
       @media (min-width: 1025px) {
         padding: 0.75rem 2vw;
       }
+
       @media (min-width: 1200px) {
         margin-left: 5rem;
         margin-right: 3rem;
         padding: 0.75rem 2rem;
       }
+
       @media (min-width: 1450px) {
         margin-left: 10rem;
         margin-right: 5rem;
+      }
+
+      &:hover {
+        color: var(--tertiary);
       }
     }
   }

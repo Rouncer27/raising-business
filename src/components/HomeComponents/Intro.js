@@ -1,7 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
-import BackgroundImage from "./BackgroundImage"
 import BGImage from "./BGImage"
 import {
   H1White,
@@ -12,11 +11,19 @@ import {
 
 const IntroStyled = styled.section`
   position: relative;
-  background-color: var(--accent);
+  padding-top: 30vw;
+  padding-bottom: 30vw;
+  background: linear-gradient(
+    to bottom,
+    var(--shadow) 0%,
+    var(--shadow) 50%,
+    var(--accent) 50%,
+    var(--accent) 100%
+  );
 
   @media (min-width: 768px) {
-    padding-top: 35rem;
-    padding-bottom: 20rem;
+    padding-top: 20vw;
+    padding-bottom: 25vw;
   }
 
   @media (min-width: 1025px) {
@@ -26,15 +33,43 @@ const IntroStyled = styled.section`
 
   .wrapper {
     ${standardWrapper};
+    max-width: 76.8rem;
+
+    @media (min-width: 768px) {
+      max-width: 90rem;
+    }
+
+    @media (min-width: 1025px) {
+      max-width: 100rem;
+    }
+
+    @media (min-width: 1200px) {
+      max-width: 105rem;
+    }
+    @media (min-width: 1600px) {
+      max-width: 110rem;
+    }
   }
 
   .introContent {
     position: relative;
     width: 100%;
-    max-width: 50rem;
+    max-width: 30rem;
     margin-right: auto;
     margin-left: 0;
     z-index: 10;
+
+    @media (min-width: 400px) {
+      max-width: 35rem;
+    }
+
+    @media (min-width: 650px) {
+      max-width: 40rem;
+    }
+
+    @media (min-width: 768px) {
+      max-width: 50rem;
+    }
   }
 
   h1 {
@@ -54,11 +89,15 @@ const IntroStyled = styled.section`
 
   .backgroundGraphic {
     position: absolute;
-    top: 0;
+    top: 30vw;
     left: 0;
     width: 100%;
     height: 100%;
     z-index: 1;
+
+    @media (min-width: 768px) {
+      top: -3rem;
+    }
 
     @media (min-width: 1025px) {
       top: -2rem;
@@ -74,15 +113,6 @@ const IntroStyled = styled.section`
     @media (min-width: 1700px) {
       top: -5.5vw;
     }
-
-    ${"" /* .mainbgImage {
-      position: absolute !important;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-position: 50% 0% !important;
-    } */}
   }
 `
 
