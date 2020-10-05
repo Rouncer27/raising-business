@@ -104,7 +104,7 @@ const IntroStyled = styled.section`
     }
 
     @media (min-width: 1250px) {
-      top: -3vw;
+      top: -2.5vw;
     }
 
     @media (min-width: 1375px) {

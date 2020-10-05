@@ -1,16 +1,142 @@
+import { Link } from "gatsby"
 import React from "react"
 import styled from "styled-components"
+import {
+  medWrapper,
+  H1Brown,
+  H2Pine,
+  B1Pine,
+  BtnMain,
+} from "../../styles/helpers"
 import MeetBackground from "./MeetBackground"
 
-const MeetHostsStyled = styled.section``
+const MeetHostsStyled = styled.section`
+  .wrapper {
+    ${medWrapper};
+  }
+
+  .meetTitle {
+    position: relative;
+    margin-top: -5vw;
+    text-align: center;
+
+    h2 {
+      ${H1Brown};
+      margin-bottom: 0;
+      font-weight: bold;
+    }
+
+    h3 {
+      ${H2Pine};
+      margin-top: 0;
+      font-weight: bold;
+    }
+  }
+
+  .meetHosts {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-flex-start;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 10rem;
+
+    .meetHost {
+      width: 100%;
+
+      @media (min-width: 768px) {
+        width: calc(50% - 6rem);
+      }
+
+      h3 {
+        ${B1Pine};
+        margin-bottom: 0;
+      }
+
+      p {
+        ${B1Pine};
+        margin-top: 0;
+      }
+    }
+
+    .meetTrev {
+      @media (min-width: 768px) {
+        margin-right: 6rem;
+      }
+    }
+
+    .meetSuzy {
+      @media (min-width: 768px) {
+        margin-left: 6rem;
+      }
+    }
+  }
+
+  .meetTogether {
+    p {
+      ${B1Pine};
+    }
+
+    &__link {
+      text-align: center;
+
+      a {
+        ${BtnMain};
+      }
+    }
+  }
+`
 
 const MeetHosts = () => {
   return (
     <MeetHostsStyled>
       <MeetBackground />
-      <div>
-        <h2>Meet Trevor & Suzy</h2>
-        <h3>The Hosts</h3>
+      <div className="wrapper">
+        <div className="meetTitle">
+          <h2>Meet Trevor & Suzy</h2>
+          <h3>The Hosts</h3>
+        </div>
+        <div className="meetHosts">
+          <div className="meetHost meetTrev">
+            <div>
+              <h3>Trevor Rounce</h3>
+              <p>
+                I’ve worn many hats and done many different things in my life,
+                but helping businesses thrive with great web design and
+                development is where my passion lies. I love to learn and stay
+                up-to-date with the ever changing web world. You miss a moment
+                and you miss a lot! Same is true in business and in life.
+                Bringing a vision to life for the first time as a thrill you
+                can’t match.
+              </p>
+            </div>
+          </div>
+          <div className="meetHost meetSuzy">
+            <div>
+              <h3>Suzy Rounce</h3>
+              <p>
+                I’m a visual designer by training and can’t imagine doing
+                anything else. I’m passionate about many things but in the end
+                it’s all about the people we meet and the dreams we are all
+                building. We get to meet amazing business owners and share in
+                their journey. I wouldn’t change a thing!
+              </p>
+            </div>
+          </div>
+        </div>
+        <div className="meetTogether">
+          <p>
+            <span>Together we are</span> Business and life partners that have
+            created a digital agency that has worked with more than 250 clients,
+            in 7 years and grown companies from just small start ups to full
+            blown multi-million dollar success stories. We have 20+ years
+            marketing, branding, operations and web experience - we want to
+            share everything with you.{" "}
+          </p>
+          <div className="meetTogether__link">
+            <Link to="/listen">Listen to the podcast</Link>
+          </div>
+        </div>
       </div>
     </MeetHostsStyled>
   )
