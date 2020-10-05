@@ -9,13 +9,20 @@ const AboutUsStyled = styled.section`
 
   .wrapper {
     ${standardWrapper};
+    align-items: flex-start;
+
     @media (min-width: 768px) {
       flex-direction: row-reverse;
     }
   }
 
   .aboutContent {
-    width: calc(50% - 4rem);
+    width: 100%;
+
+    @media (min-width: 768px) {
+      width: calc(60% - 2rem);
+    }
+
     h2 {
       ${H1Brown};
       font-weight: 700;
@@ -31,10 +38,17 @@ const AboutUsStyled = styled.section`
   }
 
   .aboutImage {
-    width: calc(50% - 8rem);
-    margin-right: 8rem;
+    width: calc(100%);
+    max-width: 25rem;
+    margin: auto;
     border-radius: 50%;
     overflow: hidden;
+
+    @media (min-width: 768px) {
+      width: calc(40% - 8rem);
+      max-width: 100%;
+      margin-right: 8rem;
+    }
   }
 `
 

@@ -20,6 +20,11 @@ export const H1Brown = `
   color: var(--brown);
 `
 
+export const H1LightGreen = `
+  ${H1Base};
+  color: var(--accent);
+`
+
 export const H2Base = `
 ${fontSizer(2.4, 2.8, 76.8, 150, 2.4)};
   font-family: 'Raleway';
@@ -31,6 +36,11 @@ ${fontSizer(2.4, 2.8, 76.8, 150, 2.4)};
 `
 
 export const H2Pine = `
-  ${H1Base};
+  ${H2Base};
   color: var(--tertiary);
+`
+
+export const H2White = `
+  ${H2Base};
+  color: var(--white);
 `

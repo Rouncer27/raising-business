@@ -9,10 +9,31 @@ import {
   BtnMain,
 } from "../../styles/helpers"
 import MeetBackground from "./MeetBackground"
+import WhitePineBackground from "../Graphics/WhitePineBackground"
 
 const MeetHostsStyled = styled.section`
+  position: relative;
   .wrapper {
     ${medWrapper};
+    position: relative;
+    z-index: 5;
+  }
+
+  .meetBackGraph {
+    position: absolute;
+    top: 30vw;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+
+    .mainbgImage {
+      position: absolute !important;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: calc(100vw * 0.64);
+    }
   }
 
   .meetTitle {
@@ -46,6 +67,10 @@ const MeetHostsStyled = styled.section`
 
       @media (min-width: 768px) {
         width: calc(50% - 6rem);
+      }
+
+      &__image {
+        min-height: 35rem;
       }
 
       h3 {
@@ -98,6 +123,7 @@ const MeetHosts = () => {
         </div>
         <div className="meetHosts">
           <div className="meetHost meetTrev">
+            <div className="meetHost__image"></div>
             <div>
               <h3>Trevor Rounce</h3>
               <p>
@@ -112,6 +138,7 @@ const MeetHosts = () => {
             </div>
           </div>
           <div className="meetHost meetSuzy">
+            <div className="meetHost__image"></div>
             <div>
               <h3>Suzy Rounce</h3>
               <p>
@@ -137,6 +164,9 @@ const MeetHosts = () => {
             <Link to="/listen">Listen to the podcast</Link>
           </div>
         </div>
+      </div>
+      <div className="meetBackGraph">
+        <WhitePineBackground />
       </div>
     </MeetHostsStyled>
   )
