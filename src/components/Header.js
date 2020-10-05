@@ -1,7 +1,7 @@
 import { Link } from "gatsby"
 import React from "react"
 import styled from "styled-components"
-import Logo from "./Logo"
+import Logo from "./Logos/Logo"
 import { medWrapper, B2LightGreen, BtnMainAlt } from "../styles/helpers/index"
 
 const HeaderStyled = styled.header`
