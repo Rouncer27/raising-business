@@ -58,11 +58,7 @@ const HeaderStyled = styled.header`
     }
 
     @media (min-width: 1025px) {
-      margin-bottom: 1vw;
-    }
-
-    @media (min-width: 1300px) {
-      margin-bottom: 1vw;
+      margin-bottom: 3vw;
     }
 
     a {

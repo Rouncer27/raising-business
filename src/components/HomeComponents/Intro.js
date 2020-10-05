@@ -2,6 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
 import BackgroundImage from "./BackgroundImage"
+import BGImage from "./BGImage"
 import {
   H1White,
   BtnMain,
@@ -11,6 +12,7 @@ import {
 
 const IntroStyled = styled.section`
   position: relative;
+  background-color: var(--accent);
 
   @media (min-width: 768px) {
     padding-top: 35rem;
@@ -27,10 +29,12 @@ const IntroStyled = styled.section`
   }
 
   .introContent {
+    position: relative;
     width: 100%;
     max-width: 50rem;
     margin-right: auto;
     margin-left: 0;
+    z-index: 10;
   }
 
   h1 {
@@ -54,16 +58,31 @@ const IntroStyled = styled.section`
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1;
+    z-index: 1;
 
-    .mainbgImage {
+    @media (min-width: 1025px) {
+      top: -2rem;
+    }
+
+    @media (min-width: 1250px) {
+      top: -3vw;
+    }
+
+    @media (min-width: 1375px) {
+      top: -4vw;
+    }
+    @media (min-width: 1700px) {
+      top: -5.5vw;
+    }
+
+    ${"" /* .mainbgImage {
       position: absolute !important;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
       background-position: 50% 0% !important;
-    }
+    } */}
   }
 `
 
@@ -83,7 +102,7 @@ const Intro = () => {
         </div>
       </div>
       <div className="backgroundGraphic">
-        <BackgroundImage />
+        <BGImage />
       </div>
     </IntroStyled>
   )
