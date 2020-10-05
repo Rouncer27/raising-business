@@ -22,7 +22,7 @@ module.exports = {
         short_name: `starter`,
         start_url: `/`,
         background_color: `#276a39`,
-        theme_color: `#greenish`,
+        theme_color: `#276a39`,
         display: `minimal-ui`,
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
