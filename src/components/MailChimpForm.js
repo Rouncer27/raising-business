@@ -3,6 +3,10 @@ import addToMailchimp from "gatsby-plugin-mailchimp"
 import styled from "styled-components"
 import { BtnMain, fontSizer } from "../styles/helpers"
 
+import FormSuccess from "./Modals/FormSuccess"
+import FormError from "./Modals/FormError"
+import FormSubmitting from "./Modals/FormSubmitting"
+
 const InputButtonStyled = styled.div`
   margin-top: 2rem;
   margin-left: 1rem;
@@ -163,7 +167,7 @@ const MailChimpForm = () => {
           id="FNAME"
           name="FNAME"
           type="text"
-          required={true}
+          required={false}
           value={formFeilds.FNAME}
           onChange={e => onChangeFields(e)}
         />
@@ -177,7 +181,7 @@ const MailChimpForm = () => {
           id="LNAME"
           name="LNAME"
           type="text"
-          required={true}
+          required={false}
           value={formFeilds.LNAME}
           onChange={e => onChangeFields(e)}
         />
@@ -191,7 +195,7 @@ const MailChimpForm = () => {
           id="EMAIL"
           name="EMAIL"
           type="email"
-          required={true}
+          required={false}
           value={formFeilds.EMAIL}
           onChange={e => onChangeFields(e)}
         />
@@ -199,23 +203,15 @@ const MailChimpForm = () => {
       <InputButtonStyled className="download-form--btn">
         <button type="submit">Sign Up</button>
       </InputButtonStyled>
-      {formFeilds.submitting && (
-        <div>
-          <h1>SUBMITTING</h1>
-        </div>
-      )}
+      {formFeilds.submitting && <FormSubmitting />}
       {formFeilds.errorWarnDisplay && (
-        <div
+        <FormError
           fixTheFormErrors={fixTheFormErrors}
           errorMessage={formFeilds.errorMsg}
-        >
-          <h1>ERROR</h1>
-        </div>
+        />
       )}
       {formFeilds.success && (
-        <div successAndClearForm={successAndClearForm}>
-          <h1>SUCCESS!!!!</h1>
-        </div>
+        <FormSuccess successAndClearForm={successAndClearForm} />
       )}
     </FormStyled>
   )
