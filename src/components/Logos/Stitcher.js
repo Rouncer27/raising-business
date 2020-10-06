@@ -10,7 +10,7 @@ const LogoStyled = styled.div`
 
 const getData = graphql`
   {
-    logo: file(relativePath: { eq: "PocketCasts.png" }) {
+    logo: file(relativePath: { eq: "Stitcher.png" }) {
       childImageSharp {
         fluid(quality: 100, maxWidth: 400) {
           ...GatsbyImageSharpFluid_withWebp

@@ -46,17 +46,17 @@ const FindUs = () => {
         </div>
         <div className="linkLogo">
           <Link to="/">
+            <Stitcher />
+          </Link>
+        </div>
+        <div className="linkLogo">
+          <Link to="/">
             <Overcast />
           </Link>
         </div>
         <div className="linkLogo">
           <Link to="/">
             <PocketCasts />
-          </Link>
-        </div>
-        <div className="linkLogo">
-          <Link to="/">
-            <Stitcher />
           </Link>
         </div>
       </div>
