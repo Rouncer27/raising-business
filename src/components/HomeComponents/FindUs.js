@@ -5,6 +5,9 @@ import { standardWrapper } from "../../styles/helpers"
 import Apple from "../Logos/Apple"
 import Google from "../Logos/Google"
 import Spotify from "../Logos/Spotify"
+import Overcast from "../Logos/Overcast"
+import PocketCasts from "../Logos/PocketCasts"
+import Stitcher from "../Logos/Stitcher"
 
 const FindUsStyled = styled.div`
   .wrapper {
@@ -12,7 +15,8 @@ const FindUsStyled = styled.div`
   }
 
   .linkLogo {
-    width: 100%;
+    width: calc(50% - 2rem);
+    margin: 2rem 1rem;
 
     @media (min-width: 768px) {
       width: calc(33.33% - 8rem);
@@ -38,6 +42,21 @@ const FindUs = () => {
         <div className="linkLogo">
           <Link to="/">
             <Spotify />
+          </Link>
+        </div>
+        <div className="linkLogo">
+          <Link to="/">
+            <Overcast />
+          </Link>
+        </div>
+        <div className="linkLogo">
+          <Link to="/">
+            <PocketCasts />
+          </Link>
+        </div>
+        <div className="linkLogo">
+          <Link to="/">
+            <Stitcher />
           </Link>
         </div>
       </div>
