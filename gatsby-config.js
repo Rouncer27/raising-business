@@ -27,8 +27,13 @@ module.exports = {
         icon: `src/images/favicon.png`, // This path is relative to the root of the site.
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+
+    {
+      resolve: "gatsby-plugin-mailchimp",
+      options: {
+        endpoint:
+          "https://raisingabusiness.us2.list-manage.com/subscribe/post?u=22169751809ea4e2554316ccc&amp;id=310bea4c16",
+      },
+    },
   ],
 }

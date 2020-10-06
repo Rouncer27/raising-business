@@ -6,6 +6,7 @@ import LogoFooter from "./Logos/LogoFooter"
 import Mic from "./Icon/Mic"
 import Twitter from "./Icon/Twitter"
 import Instagram from "./Icon/Instagram"
+import MailChimpForm from "./MailChimpForm"
 
 const FooterStyled = styled.footer`
   background-color: var(--accent);
@@ -102,6 +103,7 @@ const Footer = () => {
       <div className="wrapper">
         <div className="footerContact">
           <h3>Sign up for future guides &#8226; Worksheets</h3>
+          <MailChimpForm />
         </div>
         <div className="footerGuest">
           <div className="footerGuest__title">
