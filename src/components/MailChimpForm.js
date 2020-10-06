@@ -167,7 +167,7 @@ const MailChimpForm = () => {
           id="FNAME"
           name="FNAME"
           type="text"
-          required={false}
+          required={true}
           value={formFeilds.FNAME}
           onChange={e => onChangeFields(e)}
         />
@@ -181,7 +181,7 @@ const MailChimpForm = () => {
           id="LNAME"
           name="LNAME"
           type="text"
-          required={false}
+          required={true}
           value={formFeilds.LNAME}
           onChange={e => onChangeFields(e)}
         />
@@ -195,7 +195,7 @@ const MailChimpForm = () => {
           id="EMAIL"
           name="EMAIL"
           type="email"
-          required={false}
+          required={true}
           value={formFeilds.EMAIL}
           onChange={e => onChangeFields(e)}
         />
