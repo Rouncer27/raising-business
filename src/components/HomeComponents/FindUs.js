@@ -58,14 +58,22 @@ const FindUs = () => {
           </a>
         </div>
         <div className="linkLogo">
-          <Link to="/">
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://overcast.fm/itunes1534965741/raising-a-business-podcast"
+          >
             <Overcast />
-          </Link>
+          </a>
         </div>
         <div className="linkLogo">
-          <Link to="/">
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://pca.st/itunes/1534965741"
+          >
             <PocketCasts />
-          </Link>
+          </a>
         </div>
       </div>
     </FindUsStyled>

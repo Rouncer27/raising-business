@@ -1,4 +1,5 @@
 import React from "react"
+import { graphql } from "gatsby"
 
 import Intro from "../components/HomeComponents/Intro"
 import AboutUs from "../components/HomeComponents/AboutUs"
