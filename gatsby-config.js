@@ -1,3 +1,6 @@
+const dotenv = require("dotenv")
+dotenv.config({ path: ".env" })
+
 module.exports = {
   siteMetadata: {
     title: `Raising a Business Podcast`,
@@ -38,8 +41,8 @@ module.exports = {
     {
       resolve: "gatsby-source-buzzsprout",
       options: {
-        token: "c220bb365fcd86c87a589ea79f0446a6",
-        podcastId: "1395172",
+        token: process.env.BUZZSPROUT_TOKEN,
+        podcastId: process.env.BUZZSPROUT_ID,
       },
     },
   ],
