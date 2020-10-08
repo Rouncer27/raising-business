@@ -23,7 +23,10 @@ const IndexPage = props => {
 
 export const homeQuery = graphql`
   {
-    latestEpisode: allBuzzsproutPodcastEpisode(limit: 1) {
+    latestEpisode: allBuzzsproutPodcastEpisode(
+      limit: 1
+      sort: { fields: private }
+    ) {
       edges {
         node {
           artist
