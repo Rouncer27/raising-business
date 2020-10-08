@@ -50,18 +50,35 @@ const ListenNowStyled = styled.section`
       flex-wrap: wrap;
       justify-content: center;
       width: 100%;
+      max-width: 30rem;
+      margin: 2rem auto;
+
+      @media (min-width: 768px) {
+        max-width: 100%;
+      }
 
       &--image {
-        width: 13rem;
+        width: 100%;
         padding: 1rem;
         background-color: #e3e1e2;
+
+        @media (min-width: 768px) {
+          width: 13rem;
+          padding: 1rem;
+        }
       }
 
       &--meta {
-        width: calc(100% - 13rem);
+        width: calc(100%);
+
         background-color: #e3e1e2;
 
+        @media (min-width: 768px) {
+          width: calc(100% - 13rem);
+        }
+
         .epTitle {
+          padding: 1.5rem;
           h3 {
             ${B1Pine};
           }
