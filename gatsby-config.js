@@ -35,5 +35,12 @@ module.exports = {
           "https://raisingabusiness.us2.list-manage.com/subscribe/post?u=22169751809ea4e2554316ccc&amp;id=310bea4c16",
       },
     },
+    {
+      resolve: "gatsby-source-buzzsprout",
+      options: {
+        token: "c220bb365fcd86c87a589ea79f0446a6",
+        podcastId: "1395172",
+      },
+    },
   ],
 }
