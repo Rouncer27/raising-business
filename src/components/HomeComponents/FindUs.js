@@ -30,9 +30,13 @@ const FindUs = () => {
     <FindUsStyled>
       <div className="wrapper">
         <div className="linkLogo">
-          <Link to="/">
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://podcasts.apple.com/ca/podcast/raising-a-business-podcast/id1534965741"
+          >
             <Apple />
-          </Link>
+          </a>
         </div>
         <div className="linkLogo">
           <Link to="/">
