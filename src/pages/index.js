@@ -33,13 +33,14 @@ export const homeQuery = graphql`
         }
       }
     }
-    allEpisodes: allBuzzsproutPodcastEpisode(skip: 1) {
+    allEpisodes: allBuzzsproutPodcastEpisode(skip: 0) {
       edges {
         node {
           artist
           artwork_url
           audio_url
           title
+          private
         }
       }
     }

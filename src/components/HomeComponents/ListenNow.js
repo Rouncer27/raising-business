@@ -103,6 +103,36 @@ const ListenNowStyled = styled.section`
       }
     }
   }
+
+  .epList {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+
+    &__title {
+      width: 100%;
+      text-align: center;
+
+      h2 {
+        ${H2White};
+      }
+    }
+  }
+`
+
+const EpisodeCard = styled.div`
+  width: 100%;
+  margin: 2.5rem auto;
+
+  @media (min-width: 768px) {
+    width: calc(50% -5rem);
+    margin: 2.5rem;
+  }
+
+  @media (min-width: 1025px) {
+    width: calc(33.33% - 4rem);
+    margin: 2rem;
+  }
 `
 
 const ListenNow = ({ latestEpisode, allEpisodes }) => {
@@ -117,6 +147,7 @@ const ListenNow = ({ latestEpisode, allEpisodes }) => {
         <div className="title">
           <h2>Listen and Subscribe to the Raising a Business Podcast</h2>
         </div>
+
         <div className="lattestEp">
           <div className="lattestEp__title">
             <h3>Latest Episode</h3>
@@ -137,6 +168,27 @@ const ListenNow = ({ latestEpisode, allEpisodes }) => {
               <AudioPlayer controls src={lateEp.audio_url} />
             </div>
           </div>
+        </div>
+
+        <div className="epList">
+          <div className="epList__title">
+            <h2>More Episodes</h2>
+          </div>
+          {allEpisodes.edges.map(episode => {
+            {
+              /* if (episode.node.private) return null */
+            }
+            return (
+              <EpisodeCard>
+                <div>
+                  <img
+                    src={episode.node.artwork_url}
+                    alt={episode.node.title}
+                  />
+                </div>
+              </EpisodeCard>
+            )
+          })}
         </div>
       </div>
       <DarkGreenBottom />
