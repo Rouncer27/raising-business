@@ -40,14 +40,22 @@ const FindUs = () => {
           </Link>
         </div>
         <div className="linkLogo">
-          <Link to="/">
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://open.spotify.com/show/2RxPmZzJXXEYXzZEouzmr1"
+          >
             <Spotify />
-          </Link>
+          </a>
         </div>
         <div className="linkLogo">
-          <Link to="/">
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://www.stitcher.com/podcast/raising-a-business-podcast"
+          >
             <Stitcher />
-          </Link>
+          </a>
         </div>
         <div className="linkLogo">
           <Link to="/">

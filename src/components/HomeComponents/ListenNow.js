@@ -120,6 +120,9 @@ const ListenNow = ({ latestEpisode, allEpisodes }) => {
         <div className="lattestEp">
           <div className="lattestEp__title">
             <h3>Latest Episode</h3>
+            <a href={lateEp.audio_url} title="Download MP3" target="_download">
+              Download
+            </a>
           </div>
           <div className="lattestEp__player">
             <div className="lattestEp__player--image">
