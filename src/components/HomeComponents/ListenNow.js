@@ -10,6 +10,7 @@ import DarkGreenTop from "../Graphics/DarkGreenTop"
 import DarkGreenBottom from "../Graphics/DarkGreenBottom"
 import AudioPlayer from "react-h5-audio-player"
 import "react-h5-audio-player/lib/styles.css"
+import { Link } from "gatsby"
 
 const ListenNowStyled = styled.section`
   position: relative;
@@ -111,18 +112,24 @@ const ListenNowStyled = styled.section`
 
     &__title {
       width: 100%;
+      margin-top: 5rem;
+      margin-bottom: 1.5rem;
       text-align: center;
 
       h2 {
         ${H2White};
+        font-weight: bold;
+        text-transform: uppercase;
       }
     }
   }
 `
 
-const EpisodeCard = styled.div`
+const EpisodeCard = styled(Link)`
   width: 100%;
   margin: 2.5rem auto;
+  border-radius: 1rem;
+  overflow: hidden;
 
   @media (min-width: 768px) {
     width: calc(50% -5rem);
@@ -136,10 +143,7 @@ const EpisodeCard = styled.div`
 `
 
 const ListenNow = ({ latestEpisode, allEpisodes }) => {
-  console.log({ allEpisodes })
-  console.log({ latestEpisode })
   const lateEp = latestEpisode?.edges[0]?.node
-  console.log({ lateEp })
   return (
     <ListenNowStyled>
       <DarkGreenTop />
@@ -175,11 +179,11 @@ const ListenNow = ({ latestEpisode, allEpisodes }) => {
             <h2>More Episodes</h2>
           </div>
           {allEpisodes.edges.map(episode => {
-            {
-              /* if (episode.node.private) return null */
-            }
             return (
-              <EpisodeCard>
+              <EpisodeCard
+                key={episode.node.id}
+                to={`/episodes/${episode.node.slug}`}
+              >
                 <div>
                   <img
                     src={episode.node.artwork_url}

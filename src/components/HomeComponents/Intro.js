@@ -128,7 +128,9 @@ const Intro = () => {
             husband and wife team, as people strengthening relationships and
             growing as human beings.
           </p>
-          <Link to="/episodes">Listen to the podcast</Link>
+          <Link to="/episodes/rab-001-introduction-what-to-expect">
+            Listen to the podcast
+          </Link>
         </div>
       </div>
       <div className="backgroundGraphic">

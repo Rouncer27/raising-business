@@ -25,7 +25,7 @@ export const homeQuery = graphql`
   {
     latestEpisode: allBuzzsproutPodcastEpisode(
       limit: 1
-      sort: { fields: private }
+      filter: { private: { eq: false } }
     ) {
       edges {
         node {
@@ -33,10 +33,13 @@ export const homeQuery = graphql`
           artwork_url
           audio_url
           title
+          slug
         }
       }
     }
-    allEpisodes: allBuzzsproutPodcastEpisode(skip: 0) {
+    allEpisodes: allBuzzsproutPodcastEpisode(
+      filter: { private: { eq: false } }
+    ) {
       edges {
         node {
           artist
@@ -44,6 +47,8 @@ export const homeQuery = graphql`
           audio_url
           title
           private
+          slug
+          id
         }
       }
     }

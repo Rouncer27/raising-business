@@ -1,7 +1,34 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.com/docs/node-apis/
- */
+const path = require(`path`)
+exports.createPages = async ({ graphql, actions }) => {
+  const { createPage } = actions
+  try {
+    const { data } = await graphql(`
+      {
+        allEpisodes: allBuzzsproutPodcastEpisode(
+          filter: { private: { eq: false } }
+        ) {
+          edges {
+            node {
+              id
+              slug
+              private
+            }
+          }
+        }
+      }
+    `)
 
-// You can delete this file if you're not using it
+    const episodes = data.allEpisodes.edges
+    episodes.forEach(({ node }) => {
+      createPage({
+        path: `/episodes/${node.slug}`,
+        component: path.resolve(`./src/templates/Episode.js`),
+        context: {
+          id: node.id,
+        },
+      })
+    })
+  } catch (err) {
+    console.log("Error retrieving data", err)
+  }
+}

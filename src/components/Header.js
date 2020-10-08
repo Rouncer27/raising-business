@@ -166,7 +166,10 @@ const Header = props => {
           >
             Contact
           </button>
-          <Link className="callToAct" to="/">
+          <Link
+            className="callToAct"
+            to="/episodes/rab-001-introduction-what-to-expect"
+          >
             Listen To The Podcast
           </Link>
         </nav>
