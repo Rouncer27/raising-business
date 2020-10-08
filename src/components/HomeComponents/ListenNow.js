@@ -58,6 +58,10 @@ const ListenNowStyled = styled.section`
       }
 
       &--image {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
         width: 100%;
         padding: 1rem;
         background-color: #e3e1e2;
@@ -66,11 +70,14 @@ const ListenNowStyled = styled.section`
           width: 13rem;
           padding: 1rem;
         }
+
+        .epImage {
+          width: 100%;
+        }
       }
 
       &--meta {
         width: calc(100%);
-
         background-color: #e3e1e2;
 
         @media (min-width: 768px) {
@@ -116,7 +123,9 @@ const ListenNow = ({ latestEpisode, allEpisodes }) => {
           </div>
           <div className="lattestEp__player">
             <div className="lattestEp__player--image">
-              <img src={lateEp.artwork_url} alt={lateEp.title} />
+              <div className="epImage">
+                <img src={lateEp.artwork_url} alt={lateEp.title} />
+              </div>
             </div>
             <div className="lattestEp__player--meta">
               <div className="epTitle">
