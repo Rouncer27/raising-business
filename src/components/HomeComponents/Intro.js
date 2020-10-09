@@ -11,15 +11,27 @@ import {
 
 const IntroStyled = styled.section`
   position: relative;
-  padding-top: 30vw;
-  padding-bottom: 30vw;
+  padding-top: 20rem;
+  padding-bottom: 0;
   background: linear-gradient(
     to bottom,
     var(--shadow) 0%,
     var(--shadow) 50%,
-    var(--accent) 50%,
-    var(--accent) 100%
+    var(--shadow) 50%,
+    var(--shadow) 100%
   );
+
+  @media (min-width: 400px) {
+    padding-top: 30vw;
+    padding-bottom: 30vw;
+    background: linear-gradient(
+      to bottom,
+      var(--shadow) 0%,
+      var(--shadow) 50%,
+      var(--accent) 50%,
+      var(--accent) 100%
+    );
+  }
 
   @media (min-width: 768px) {
     padding-top: 20vw;
@@ -89,14 +101,20 @@ const IntroStyled = styled.section`
 
   .backgroundGraphic {
     position: absolute;
-    top: 30vw;
-    left: 0;
+    top: 0vw;
+    left: 100vw;
     width: 100%;
     height: 100%;
     z-index: 1;
 
+    @media (min-width: 400px) {
+      top: 30vw;
+      left: 0;
+    }
+
     @media (min-width: 768px) {
       top: -3rem;
+      left: 0;
     }
 
     @media (min-width: 1025px) {

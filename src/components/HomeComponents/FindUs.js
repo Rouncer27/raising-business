@@ -39,9 +39,7 @@ const FindUs = () => {
           </a>
         </div>
         <div className="linkLogo">
-          <Link to="/">
-            <Google />
-          </Link>
+          <Google />
         </div>
         <div className="linkLogo">
           <a
@@ -71,13 +69,14 @@ const FindUs = () => {
           </a>
         </div>
         <div className="linkLogo">
-          <a
+          {/* <a
             target="_blank"
             rel="noreferrer"
             href="https://pca.st/itunes/1534965741"
           >
-            <PocketCasts />
-          </a>
+            
+          </a> */}
+          <PocketCasts />
         </div>
       </div>
     </FindUsStyled>
