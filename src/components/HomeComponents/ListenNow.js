@@ -51,7 +51,7 @@ const ListenNowStyled = styled.section`
       flex-wrap: wrap;
       justify-content: center;
       width: 100%;
-      max-width: 30rem;
+      max-width: 40rem;
       margin: 2rem auto;
 
       @media (min-width: 768px) {

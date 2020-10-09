@@ -3,7 +3,6 @@ import { useStaticQuery, graphql } from "gatsby"
 
 import SEO from "./SEO"
 import Header from "./Header"
-import MobileNav from "./MobileNav/MobileNav"
 import Footer from "./Footer"
 import GlobalStyles from "../styles/GlobalStyles"
 
@@ -27,7 +26,6 @@ const Layout = props => {
         location={props.location}
         siteTitle={data.site.siteMetadata?.title || `Title`}
       />
-
       <main>{children}</main>
       <Footer />
     </>

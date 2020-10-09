@@ -7,6 +7,12 @@ import "react-h5-audio-player/lib/styles.css"
 import MobileNav from "../components/MobileNav/MobileNav"
 
 const EpisodeStyled = styled.div`
+  margin-top: 7.5rem;
+
+  @media (min-width: 768px) {
+    margin-top: 2rem;
+  }
+
   .wrapper {
     ${standardWrapper};
   }
@@ -50,7 +56,7 @@ const EpisodePlayer = styled.div`
     flex-wrap: wrap;
     justify-content: center;
     width: 100%;
-    max-width: 30rem;
+    max-width: 40rem;
     margin: 2rem auto;
 
     @media (min-width: 768px) {
