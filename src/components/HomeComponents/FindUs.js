@@ -15,10 +15,15 @@ const FindUsStyled = styled.div`
   }
 
   .linkLogo {
-    width: calc(50% - 2rem);
-    margin: 2rem 1rem;
+    width: calc(100% - 8rem);
+    margin: 2rem 4rem;
 
     @media (min-width: 768px) {
+      width: calc(50% - 2rem);
+      margin: 2rem 4rem;
+    }
+
+    @media (min-width: 1025px) {
       width: calc(33.33% - 8rem);
       margin: 2rem 4rem;
     }

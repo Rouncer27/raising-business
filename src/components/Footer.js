@@ -123,12 +123,20 @@ const Footer = () => {
                 <Mic />
               </li>
               <li>
-                <a href="https://instagram.com">
+                <a
+                  rel="noreferrer"
+                  target="_blank"
+                  href="https://www.instagram.com/raisingabiz/"
+                >
                   <Instagram />
                 </a>
               </li>
               <li>
-                <a href="https://twitter.com">
+                <a
+                  rel="noreferrer"
+                  target="_blank"
+                  href="https://twitter.com/raisingabiz?lang=en"
+                >
                   <Twitter />
                 </a>
               </li>

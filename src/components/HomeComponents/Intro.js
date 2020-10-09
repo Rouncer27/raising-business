@@ -16,13 +16,13 @@ const IntroStyled = styled.section`
   background: linear-gradient(
     to bottom,
     var(--shadow) 0%,
-    var(--shadow) 50%,
-    var(--shadow) 50%,
+    var(--shadow) 75%,
+    var(--shadow) 75%,
     var(--shadow) 100%
   );
 
   @media (min-width: 400px) {
-    padding-top: 30vw;
+    padding-top: 20rem;
     padding-bottom: 30vw;
     background: linear-gradient(
       to bottom,
@@ -36,6 +36,14 @@ const IntroStyled = styled.section`
   @media (min-width: 768px) {
     padding-top: 20vw;
     padding-bottom: 25vw;
+
+    background: linear-gradient(
+      to bottom,
+      var(--shadow) 0%,
+      var(--shadow) 50%,
+      var(--accent) 50%,
+      var(--accent) 100%
+    );
   }
 
   @media (min-width: 1025px) {
@@ -110,7 +118,7 @@ const IntroStyled = styled.section`
 
     @media (min-width: 400px) {
       display: block;
-      top: 30vw;
+      top: 25rem;
       left: 0;
     }
 

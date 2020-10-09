@@ -28,7 +28,9 @@ const AboutUsStyled = styled.section`
       font-weight: 700;
 
       span {
-        display: block;
+        @media (min-width: 768px) {
+          display: block;
+        }
       }
     }
 
@@ -58,7 +60,7 @@ const AboutUs = () => {
       <div className="wrapper">
         <div className="aboutContent">
           <h2>
-            <span>Building a business is tough.</span>
+            <span>Building a business is tough.</span>{" "}
             <span>But we can navigate it</span>
             <span>together.</span>
           </h2>
