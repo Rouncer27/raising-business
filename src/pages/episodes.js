@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import styled from "styled-components"
 import { standardWrapper, H2Pine, B1Pine } from "../styles/helpers"
 
@@ -14,6 +14,7 @@ const EpisodeFull = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   width: 100%;
+  margin-bottom: 5rem;
 
   .epImage {
     width: 100%;
@@ -38,6 +39,15 @@ const EpisodeFull = styled.div`
       h2 {
         ${H2Pine};
         font-weight: bold;
+
+        a {
+          ${H2Pine};
+          font-weight: bold;
+
+          &:hover {
+            color: var(--secondary);
+          }
+        }
       }
     }
 
@@ -62,15 +72,22 @@ const EpisodesPage = props => {
             {allEpisodes.edges.map(episode => {
               return (
                 <EpisodeFull key={episode.node.id}>
-                  <div className="epImage">
+                  <Link
+                    to={`/episodes/${episode.node.slug}`}
+                    className="epImage"
+                  >
                     <img
                       src={episode.node.artwork_url}
                       alt={episode.node.title}
                     />
-                  </div>
+                  </Link>
                   <div className="epContent">
                     <div className="epContent__title">
-                      <h2>{episode.node.title}</h2>
+                      <h2>
+                        <Link to={`/episodes/${episode.node.slug}`}>
+                          {episode.node.title}
+                        </Link>
+                      </h2>
                     </div>
                     <div className="epContent__summary">
                       <p>{episode.node.summary}</p>

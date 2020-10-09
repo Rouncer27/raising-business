@@ -156,7 +156,7 @@ const Intro = () => {
             husband and wife team, as people strengthening relationships and
             growing as human beings.
           </p>
-          <Link to="/episodes/rab-001-introduction-what-to-expect">
+          <Link to="/episodes/rab-002-why-is-storytelling-so-important">
             Listen to the podcast
           </Link>
         </div>

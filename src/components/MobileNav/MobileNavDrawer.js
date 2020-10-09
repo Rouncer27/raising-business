@@ -102,7 +102,7 @@ const MobileNavDrawer = ({ isOpen, location }) => {
           <Link to="/episodes">Episodes</Link>
           <Link
             className="callToAct"
-            to="/episodes/rab-001-introduction-what-to-expect"
+            to="/episodes/rab-002-why-is-storytelling-so-important"
           >
             Listen To The Podcast
           </Link>

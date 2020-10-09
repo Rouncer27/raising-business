@@ -201,7 +201,7 @@ const MeetHosts = () => {
             share everything with you.{" "}
           </p>
           <div className="meetTogether__link">
-            <Link to="/episodes/rab-001-introduction-what-to-expect">
+            <Link to="/episodes/rab-002-why-is-storytelling-so-important">
               Listen to the podcast
             </Link>
           </div>

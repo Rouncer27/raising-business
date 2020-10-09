@@ -168,7 +168,7 @@ const Header = props => {
           </button>
           <Link
             className="callToAct"
-            to="/episodes/rab-001-introduction-what-to-expect"
+            to="/episodes/rab-002-why-is-storytelling-so-important"
           >
             Listen To The Podcast
           </Link>
