@@ -17,17 +17,22 @@ const FindUsStyled = styled.div`
   }
 
   .linkLogo {
-    width: calc(100% - 8rem);
-    margin: 2rem 4rem;
+    width: calc(50% - 4rem);
+    margin: 2rem;
 
     @media (min-width: 768px) {
-      width: calc(50% - 2rem);
+      width: calc(33.33% - 8rem);
       margin: 2rem 4rem;
     }
 
     @media (min-width: 1025px) {
-      width: calc(33.33% - 8rem);
-      margin: 2rem 4rem;
+      width: calc(25% - 6rem);
+      margin: 2rem 3rem;
+    }
+
+    @media (min-width: 1250px) {
+      width: calc(25% - 6rem);
+      margin: 2rem 3rem;
     }
 
     &__rss {
