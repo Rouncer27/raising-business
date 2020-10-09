@@ -100,6 +100,7 @@ const IntroStyled = styled.section`
   }
 
   .backgroundGraphic {
+    display: none;
     position: absolute;
     top: 0vw;
     left: 100vw;
@@ -108,6 +109,7 @@ const IntroStyled = styled.section`
     z-index: 1;
 
     @media (min-width: 400px) {
+      display: block;
       top: 30vw;
       left: 0;
     }

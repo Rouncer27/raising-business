@@ -1,6 +1,0 @@
-# Redirect domain aliases to primary domain
-https://raisingabusiness.ca/* https://raisingabusiness.com/:splat 301!
-https://www.raisingabusiness.ca/* https://raisingabusiness.com/:splat 301!
-
-# Optional: Redirect default Netlify subdomain to primary domain
-https://raisingabusiness.netlify.app/* https://raisingabusiness.com/:splat 301!
