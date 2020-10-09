@@ -8,10 +8,12 @@ import Spotify from "../Logos/Spotify"
 import Overcast from "../Logos/Overcast"
 import PocketCasts from "../Logos/PocketCasts"
 import Stitcher from "../Logos/Stitcher"
+import RssLogo from "../Logos/RssLogo"
 
 const FindUsStyled = styled.div`
   .wrapper {
     ${standardWrapper};
+    align-items: center;
   }
 
   .linkLogo {
@@ -26,6 +28,28 @@ const FindUsStyled = styled.div`
     @media (min-width: 1025px) {
       width: calc(33.33% - 8rem);
       margin: 2rem 4rem;
+    }
+
+    &__rss {
+      padding: 0 3rem;
+
+      a {
+        display: flex;
+        align-items: flex-end;
+
+        .rssLogo {
+          width: 5rem;
+          height: 5rem;
+        }
+
+        p {
+          margin: 0;
+          margin-left: 1rem;
+          color: var(--black);
+          font-weight: bold;
+          line-height: 1;
+        }
+      }
     }
   }
 `
@@ -82,6 +106,18 @@ const FindUs = () => {
             
           </a> */}
           <PocketCasts />
+        </div>
+        <div className="linkLogo linkLogo__rss">
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://feeds.buzzsprout.com/1395172.rss"
+          >
+            <div className="rssLogo">
+              <RssLogo />
+            </div>
+            <p>RSS Feed</p>
+          </a>
         </div>
       </div>
     </FindUsStyled>
