@@ -4,6 +4,7 @@ import styled from "styled-components"
 import { standardWrapper, H2White, H2Pine, B1Pine } from "../styles/helpers"
 import AudioPlayer from "react-h5-audio-player"
 import "react-h5-audio-player/lib/styles.css"
+import MobileNav from "../components/MobileNav/MobileNav"
 
 const EpisodeStyled = styled.div`
   .wrapper {
@@ -106,37 +107,38 @@ const EpisodePlayer = styled.div`
 const Episode = props => {
   const { episode } = props.data
 
-  console.log({ episode })
-
   return (
-    <EpisodeStyled>
-      <div className="wrapper">
-        <div className="episodeTitle">
-          <h1>{episode.title}</h1>
-        </div>
-
-        <EpisodePlayer className="lattestEp">
-          <div className="lattestEp__player">
-            <div className="lattestEp__player--image">
-              <div className="epImage">
-                <img src={episode.artwork_url} alt={episode.title} />
-              </div>
-            </div>
-            <div className="lattestEp__player--meta">
-              <div className="epTitle">
-                <h3>{episode.title}</h3>
-              </div>
-              <AudioPlayer controls src={episode.audio_url} />
-            </div>
+    <>
+      <MobileNav />
+      <EpisodeStyled>
+        <div className="wrapper">
+          <div className="episodeTitle">
+            <h1>{episode.title}</h1>
           </div>
-        </EpisodePlayer>
 
-        <div
-          className="episodeDescription"
-          dangerouslySetInnerHTML={{ __html: episode.description }}
-        />
-      </div>
-    </EpisodeStyled>
+          <EpisodePlayer className="lattestEp">
+            <div className="lattestEp__player">
+              <div className="lattestEp__player--image">
+                <div className="epImage">
+                  <img src={episode.artwork_url} alt={episode.title} />
+                </div>
+              </div>
+              <div className="lattestEp__player--meta">
+                <div className="epTitle">
+                  <h3>{episode.title}</h3>
+                </div>
+                <AudioPlayer controls src={episode.audio_url} />
+              </div>
+            </div>
+          </EpisodePlayer>
+
+          <div
+            className="episodeDescription"
+            dangerouslySetInnerHTML={{ __html: episode.description }}
+          />
+        </div>
+      </EpisodeStyled>
+    </>
   )
 }
 

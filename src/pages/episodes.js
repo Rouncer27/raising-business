@@ -4,8 +4,15 @@ import styled from "styled-components"
 import { standardWrapper, H2Pine, B1Pine } from "../styles/helpers"
 import Mic from "../components/Icon/Mic"
 import FindUs from "../components/HomeComponents/FindUs"
+import MobileNav from "../components/MobileNav/MobileNav"
 
 const EpisodeListStyled = styled.div`
+  margin-top: 7.5rem;
+
+  @media (min-width: 768px) {
+    margin-top: 2rem;
+  }
+
   .wrapper {
     ${standardWrapper};
   }
@@ -88,6 +95,7 @@ const EpisodesPage = props => {
   return (
     <>
       <div>
+        <MobileNav />
         <EpisodeListStyled>
           <div className="wrapper">
             <div className="episodesTitle">

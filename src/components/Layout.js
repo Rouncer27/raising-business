@@ -27,7 +27,7 @@ const Layout = props => {
         location={props.location}
         siteTitle={data.site.siteMetadata?.title || `Title`}
       />
-      <MobileNav />
+
       <main>{children}</main>
       <Footer />
     </>

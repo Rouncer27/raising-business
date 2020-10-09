@@ -6,12 +6,14 @@ import AboutUs from "../components/HomeComponents/AboutUs"
 import MeetHosts from "../components/HomeComponents/MeetHosts"
 import ListenNow from "../components/HomeComponents/ListenNow"
 import FindUs from "../components/HomeComponents/FindUs"
+import MobileNav from "../components/MobileNav/MobileNav"
 
 const IndexPage = props => {
   const { latestEpisode, allEpisodes } = props.data
 
   return (
     <>
+      <MobileNav />
       <Intro />
       <AboutUs />
       <MeetHosts />
