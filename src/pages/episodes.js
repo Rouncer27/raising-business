@@ -3,6 +3,7 @@ import { graphql, Link } from "gatsby"
 import styled from "styled-components"
 import { standardWrapper, H2Pine, B1Pine } from "../styles/helpers"
 import Mic from "../components/Icon/Mic"
+import FindUs from "../components/HomeComponents/FindUs"
 
 const EpisodeListStyled = styled.div`
   .wrapper {
@@ -126,6 +127,7 @@ const EpisodesPage = props => {
             })}
           </div>
         </EpisodeListStyled>
+        <FindUs />
       </div>
     </>
   )
