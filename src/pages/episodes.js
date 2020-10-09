@@ -2,10 +2,30 @@ import React from "react"
 import { graphql, Link } from "gatsby"
 import styled from "styled-components"
 import { standardWrapper, H2Pine, B1Pine } from "../styles/helpers"
+import Mic from "../components/Icon/Mic"
 
 const EpisodeListStyled = styled.div`
   .wrapper {
     ${standardWrapper};
+  }
+
+  .episodesTitle {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 5rem;
+
+    &__mic {
+      width: 6rem;
+      margin-right: 3rem;
+    }
+
+    h2 {
+      ${H2Pine};
+      margin: 0;
+      font-weight: bold;
+    }
   }
 `
 
@@ -69,6 +89,14 @@ const EpisodesPage = props => {
       <div>
         <EpisodeListStyled>
           <div className="wrapper">
+            <div className="episodesTitle">
+              <div className="episodesTitle__mic">
+                <Mic />
+              </div>
+              <div className="episodesTitle__content">
+                <h2>Episodes</h2>
+              </div>
+            </div>
             {allEpisodes.edges.map(episode => {
               return (
                 <EpisodeFull key={episode.node.id}>
