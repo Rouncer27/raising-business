@@ -54,8 +54,6 @@ const EpisodeFull = styled.div`
 const EpisodesPage = props => {
   const { allEpisodes } = props.data
 
-  console.log({ allEpisodes })
-
   return (
     <>
       <div>
