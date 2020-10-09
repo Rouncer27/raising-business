@@ -42,10 +42,6 @@ const FormSuccess = ({ successAndClearForm }) => {
       <div className="submit-wrapper">
         <div className="submit-content">
           <p>You have successfully signed up</p>
-          <p>
-            Your free download will be sent to you in a couple of minutes, check
-            your inbox. Happy Reading.
-          </p>
           <button type="button" onClick={successAndClearForm}>
             Done
           </button>
