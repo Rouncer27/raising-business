@@ -73,7 +73,9 @@ const FindUs = () => {
           </a>
         </div>
         <div className="linkLogo">
-          <Google />
+          <a href="https://podcasts.google.com/feed/aHR0cHM6Ly9mZWVkcy5idXp6c3Byb3V0LmNvbS8xMzk1MTcyLnJzcw==">
+            <Google />
+          </a>
         </div>
         <div className="linkLogo">
           <a
