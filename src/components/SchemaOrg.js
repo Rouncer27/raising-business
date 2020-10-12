@@ -22,7 +22,7 @@ export default React.memo(
         "@id": "https://raisingabusiness.com/",
         name: "Raising A Business Podcast",
         alternateName: "Raising A Business Podcast",
-        logo: logo,
+        image: logo,
         telephone: "",
         email: "hello@raisingabusiness.com",
         sameAs: [
