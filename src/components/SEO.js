@@ -2,67 +2,106 @@ import React from "react"
 import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
+import SchemaOrg from "./SchemaOrg"
 
-function SEO({ description, lang, meta, title }) {
-  const { site } = useStaticQuery(
+function SEO({ description, lang, meta, title, metaImg, location }) {
+  const { site, siteLogo, defaultFb } = useStaticQuery(
     graphql`
       query {
         site {
           siteMetadata {
             title
             description
-            author
+            twitter
+            siteLogo
+            metaImg
+            siteUrl
           }
+        }
+        siteLogo: file(relativePath: { eq: "raising-a-business-footer.png" }) {
+          publicURL
+        }
+
+        defaultFb: file(
+          relativePath: { eq: "Raising-a-business-seo-meta-image.png" }
+        ) {
+          publicURL
         }
       }
     `
   )
 
-  const metaDescription = description || site.siteMetadata.description
-  const defaultTitle = site.siteMetadata?.title
+  console.log({ site })
+  console.log({ siteLogo })
+  console.log({ defaultFb })
+
+  const isBlogPost = false
+  const siteLogoUrl = `${site.siteMetadata.siteUrl}${siteLogo.publicURL}`
+  const defaultSocialMetaImage = `${site.siteMetadata.siteUrl}${defaultFb.publicURL}`
+
+  console.log({ siteLogoUrl })
+
+  // Check and see if there is a page specific description, it there is us it, if not use the default one.
+  const metaDescription = description
+    ? description
+    : site.siteMetadata.description
+
+  // Check and see if there is a page specific meta seo image, it there is us it, if not use the default one.
+  const socialShareImage = metaImg ? metaImg : defaultSocialMetaImage
+  console.log({ socialShareImage })
+  console.log({ metaDescription })
+  const canonicalUrl = `${site.siteMetadata.siteUrl}${
+    location !== undefined ? location : ""
+  }`
+  console.log({ canonicalUrl })
 
   return (
-    <Helmet
-      htmlAttributes={{
-        lang,
-      }}
-      title={title}
-      titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : null}
-      meta={[
-        {
-          name: `description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:title`,
-          content: title,
-        },
-        {
-          property: `og:description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:type`,
-          content: `website`,
-        },
-        {
-          name: `twitter:card`,
-          content: `summary`,
-        },
-        {
-          name: `twitter:creator`,
-          content: site.siteMetadata?.author || ``,
-        },
-        {
-          name: `twitter:title`,
-          content: title,
-        },
-        {
-          name: `twitter:description`,
-          content: metaDescription,
-        },
-      ].concat(meta)}
-    />
+    <>
+      <Helmet titleTemplate={`%s - ${site.siteMetadata.title}`}>
+        <title>{title}</title>
+        {/* Fav Icons */}
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="alternate icon" href="/favicon.ico" />
+        {/* Meta Tags */}
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charSet="utf-8" />
+        <meta name="description" content={metaDescription} />
+
+        {/* OpenGraph tags */}
+        <meta property="og:url" content={canonicalUrl} />
+        {isBlogPost ? (
+          <meta property="og:type" content="article" />
+        ) : (
+          <meta property="og:type" content="website" />
+        )}
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={metaDescription} />
+        <meta property="og:image" content={socialShareImage} />
+        <meta property="og:image:alt" content={metaDescription} />
+        {/* <meta property="fb:app_id" content={seo.social.fbAppID} /> */}
+        <meta property="og:site_name" content={title} />
+        <meta property="og:locale" content={`en_US`} />
+        {/* Twitter Card tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:creator" content={site.siteMetadata.twitter} />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={metaDescription} />
+        <meta name="twitter:image" content={socialShareImage} />
+      </Helmet>
+      <SchemaOrg
+        isBlogPost={false}
+        url={site.siteMetadata.siteUrl}
+        title={title}
+        image={siteLogoUrl}
+        logo={siteLogoUrl}
+        description={description}
+        datePublished="July 15, 2020"
+        canonicalUrl="https://www.whitefields.ca/"
+        author=""
+        organization="White Fields Calvary Church"
+        defaultTitle="White Fields Calvary Church"
+      />
+    </>
   )
 }
 

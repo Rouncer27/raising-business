@@ -1,6 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 
+import SEO from "../components/SEO"
 import Intro from "../components/HomeComponents/Intro"
 import AboutUs from "../components/HomeComponents/AboutUs"
 import MeetHosts from "../components/HomeComponents/MeetHosts"
@@ -13,6 +14,7 @@ const IndexPage = props => {
 
   return (
     <>
+      <SEO title="Raising a Business Podcast - Home Page" />
       <MobileNav />
       <Intro />
       <AboutUs />

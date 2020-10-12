@@ -1,7 +1,6 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
-import SEO from "./SEO"
 import Header from "./Header"
 import Footer from "./Footer"
 import GlobalStyles from "../styles/GlobalStyles"
@@ -21,7 +20,7 @@ const Layout = props => {
   return (
     <>
       <GlobalStyles />
-      <SEO title={data.site.siteMetadata?.title || `Title`} />
+
       <Header
         location={props.location}
         siteTitle={data.site.siteMetadata?.title || `Title`}

@@ -5,7 +5,10 @@ module.exports = {
   siteMetadata: {
     title: `Raising a Business Podcast`,
     description: `This is a place where we will discuss what it is like to Raise a Business, as business owners trying to build something amazing, as a husband and wife team, as people strengthening relationships and growing as human beings.`,
-    author: `@raisingabiz`,
+    twitter: `@raisingabiz`,
+    metaImg: `src/images/Raising-a-business-seo-meta-image.png`,
+    siteLogo: `src/images/raising-a-business-footer.png`,
+    siteUrl: `https://raisingabusiness.com/`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -19,6 +22,7 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-styled-components`,
+    `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -44,6 +48,20 @@ module.exports = {
       options: {
         token: process.env.BUZZSPROUT_TOKEN,
         podcastId: process.env.BUZZSPROUT_ID,
+      },
+    },
+    {
+      resolve: "gatsby-plugin-robots-txt",
+      options: {
+        host: "https://raisingabusiness.com/",
+        sitemap: "https://raisingabusiness.com/sitemap.xml",
+        policy: [{ userAgent: "*", allow: "/" }],
+      },
+    },
+    {
+      resolve: `gatsby-plugin-canonical-urls`,
+      options: {
+        siteUrl: `https://raisingabusiness.com/`,
       },
     },
   ],
