@@ -5,6 +5,7 @@ import { standardWrapper, H2Pine, B1Pine } from "../styles/helpers"
 import Mic from "../components/Icon/Mic"
 import FindUs from "../components/HomeComponents/FindUs"
 import MobileNav from "../components/MobileNav/MobileNav"
+import SEO from "../components/SEO"
 
 const EpisodeListStyled = styled.div`
   margin-top: 7.5rem;
@@ -94,6 +95,10 @@ const EpisodesPage = props => {
 
   return (
     <>
+      <SEO
+        title="The archive list of episodes"
+        description="Here is a list of all our business related podcast episodes from the Raising a Business Podcast."
+      />
       <div>
         <MobileNav />
         <EpisodeListStyled>

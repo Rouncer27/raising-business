@@ -31,25 +31,25 @@ function SEO({ description, lang, meta, title, metaImg, location }) {
     `
   )
 
-  console.log({ site })
-  console.log({ siteLogo })
-  console.log({ defaultFb })
+  const language = lang ? lang : "en"
 
   const isBlogPost = false
   const siteLogoUrl = `${site.siteMetadata.siteUrl}${siteLogo.publicURL}`
   const defaultSocialMetaImage = `${site.siteMetadata.siteUrl}${defaultFb.publicURL}`
-
+  console.log(defaultFb.publicURL)
   console.log({ siteLogoUrl })
 
   // Check and see if there is a page specific description, it there is us it, if not use the default one.
   const metaDescription = description
     ? description
     : site.siteMetadata.description
+  console.log({ metaDescription })
 
   // Check and see if there is a page specific meta seo image, it there is us it, if not use the default one.
   const socialShareImage = metaImg ? metaImg : defaultSocialMetaImage
   console.log({ socialShareImage })
-  console.log({ metaDescription })
+
+  // Get the canonical url and if there is a location passed in for specific pages, add that to the end of it. //
   const canonicalUrl = `${site.siteMetadata.siteUrl}${
     location !== undefined ? location : ""
   }`
@@ -57,7 +57,10 @@ function SEO({ description, lang, meta, title, metaImg, location }) {
 
   return (
     <>
-      <Helmet titleTemplate={`%s - ${site.siteMetadata.title}`}>
+      <Helmet
+        titleTemplate={`%s - ${site.siteMetadata.title}`}
+        htmlAttributes={{ language }}
+      >
         <title>{title}</title>
         {/* Fav Icons */}
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
