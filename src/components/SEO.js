@@ -97,11 +97,11 @@ function SEO({ description, lang, meta, title, metaImg, location }) {
         image={siteLogoUrl}
         logo={siteLogoUrl}
         description={description}
-        datePublished="July 15, 2020"
-        canonicalUrl="https://www.whitefields.ca/"
+        datePublished="October 15, 2020"
+        canonicalUrl="https://raisingabusiness.com/"
         author=""
-        organization="White Fields Calvary Church"
-        defaultTitle="White Fields Calvary Church"
+        organization={site.siteMetadata.title}
+        defaultTitle={site.siteMetadata.title}
       />
     </>
   )
