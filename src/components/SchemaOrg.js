@@ -32,58 +32,6 @@ export default React.memo(
         url: "https://raisingabusiness.com/",
         image: image,
         description: description,
-        address: {
-          "@type": "PostalAddress",
-          streetAddress: "",
-          addressLocality: "Airdrie",
-          addressRegion: "Alberta",
-          postalCode: "",
-          addressCountry: "CA",
-        },
-        openingHoursSpecification: [
-          {
-            "@type": "OpeningHoursSpecification",
-            dayOfWeek: ["Monday"],
-            opens: "",
-            closes: "",
-          },
-          {
-            "@type": "OpeningHoursSpecification",
-            dayOfWeek: ["Tuesday"],
-            opens: "9:00am",
-            closes: "4:00pm",
-          },
-          {
-            "@type": "OpeningHoursSpecification",
-            dayOfWeek: ["Wednesday"],
-            opens: "9:00am",
-            closes: "4:00pm",
-          },
-          {
-            "@type": "OpeningHoursSpecification",
-            dayOfWeek: ["Thursday"],
-            opens: "9:00am",
-            closes: "4:00pm",
-          },
-          {
-            "@type": "OpeningHoursSpecification",
-            dayOfWeek: ["Friday"],
-            opens: "9:00am",
-            closes: "4:00pm",
-          },
-          {
-            "@type": "OpeningHoursSpecification",
-            dayOfWeek: ["Saturday"],
-            opens: "",
-            closes: "",
-          },
-          {
-            "@type": "OpeningHoursSpecification",
-            dayOfWeek: ["Sunday"],
-            opens: "10:00am",
-            closes: "1:00pm",
-          },
-        ],
       },
     ]
 
