@@ -36,7 +36,6 @@ function SEO({ description, lang, meta, title, metaImg, location }) {
   const isBlogPost = false
   const siteLogoUrl = `${site.siteMetadata.siteUrl}${siteLogo.publicURL}`
   const defaultSocialMetaImage = `${site.siteMetadata.siteUrl}${defaultFb.publicURL}`
-  console.log(defaultFb.publicURL)
   console.log({ siteLogoUrl })
 
   // Check and see if there is a page specific description, it there is us it, if not use the default one.
@@ -59,7 +58,7 @@ function SEO({ description, lang, meta, title, metaImg, location }) {
     <>
       <Helmet
         titleTemplate={`%s - ${site.siteMetadata.title}`}
-        htmlAttributes={{ language }}
+        htmlAttributes={{ lang: language }}
       >
         <title>{title}</title>
         {/* Fav Icons */}
