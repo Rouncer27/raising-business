@@ -18,7 +18,7 @@ export default React.memo(
     const baseSchema = [
       {
         "@context": "http://schema.org",
-        "@type": "",
+        "@type": "CreativeWork",
         "@id": "https://raisingabusiness.com/",
         name: "Raising A Business Podcast",
         alternateName: "Raising A Business Podcast",
