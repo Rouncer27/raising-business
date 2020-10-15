@@ -27,6 +27,29 @@ const EpisodeStyled = styled.div`
   }
 
   .episodeDescription {
+    width: 100%;
+    max-width: 80rem;
+    margin-top: 2.5rem;
+    margin-right: auto;
+    margin-bottom: 2.5rem;
+    margin-left: auto;
+
+    p,
+    a {
+      ${B1Pine};
+    }
+
+    a {
+      color: var(--primary);
+
+      &:hover {
+        color: var(--accent);
+      }
+    }
+  }
+
+  .shownotes {
+    width: 100%;
     max-width: 80rem;
     margin-top: 2.5rem;
     margin-right: auto;
@@ -111,7 +134,7 @@ const EpisodePlayer = styled.div`
 `
 
 const Episode = props => {
-  const { episode } = props.data
+  const { episode, showNotes } = props.data
 
   return (
     <>
@@ -142,6 +165,14 @@ const Episode = props => {
             className="episodeDescription"
             dangerouslySetInnerHTML={{ __html: episode.description }}
           />
+          {showNotes && (
+            <div
+              className="shownotes"
+              dangerouslySetInnerHTML={{
+                __html: showNotes.episodeShowNotes.showNotes,
+              }}
+            />
+          )}
         </div>
       </EpisodeStyled>
     </>
@@ -149,7 +180,7 @@ const Episode = props => {
 }
 
 export const episodePageQuery = graphql`
-  query episodePagePage($id: String!) {
+  query episodePagePage($id: String!, $slug: String!) {
     episode: buzzsproutPodcastEpisode(id: { eq: $id }) {
       description
       episode_number
@@ -157,6 +188,13 @@ export const episodePageQuery = graphql`
       artwork_url
       audio_url
       artist
+    }
+
+    showNotes: wpEpisode(slug: { eq: $slug }) {
+      title
+      episodeShowNotes {
+        showNotes
+      }
     }
   }
 `

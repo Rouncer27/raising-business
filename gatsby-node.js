@@ -25,6 +25,7 @@ exports.createPages = async ({ graphql, actions }) => {
         component: path.resolve(`./src/templates/Episode.js`),
         context: {
           id: node.id,
+          slug: node.slug,
         },
       })
     })

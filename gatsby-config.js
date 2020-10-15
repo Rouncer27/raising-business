@@ -51,6 +51,12 @@ module.exports = {
       },
     },
     {
+      resolve: "gatsby-source-wordpress-experimental",
+      options: {
+        url: process.env.WORDPRESS_URL,
+      },
+    },
+    {
       resolve: "gatsby-plugin-robots-txt",
       options: {
         host: "https://raisingabusiness.com/",
