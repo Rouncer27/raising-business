@@ -16,9 +16,9 @@ const IndexPage = props => {
     <>
       <SEO title="Raising a Business Podcast - Home Page" />
       <MobileNav />
-      <Intro />
+      <Intro latestEpisode={latestEpisode.edges[0]} />
       <AboutUs />
-      <MeetHosts />
+      <MeetHosts latestEpisode={latestEpisode.edges[0]} />
       <ListenNow latestEpisode={latestEpisode} allEpisodes={allEpisodes} />
       <FindUs />
     </>

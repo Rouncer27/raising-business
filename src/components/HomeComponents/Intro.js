@@ -144,7 +144,7 @@ const IntroStyled = styled.section`
   }
 `
 
-const Intro = () => {
+const Intro = ({ latestEpisode }) => {
   return (
     <IntroStyled>
       <div className="wrapper">
@@ -156,7 +156,7 @@ const Intro = () => {
             husband and wife team, as people strengthening relationships and
             growing as human beings.
           </p>
-          <Link to="/episodes/rab-002-why-is-storytelling-so-important">
+          <Link to={`/episodes/${latestEpisode.node.slug}`}>
             Listen to the podcast
           </Link>
         </div>

@@ -13,10 +13,24 @@ const Layout = props => {
           title
         }
       }
+
+      latestEpisode: allBuzzsproutPodcastEpisode(
+        limit: 1
+        filter: { private: { eq: false } }
+      ) {
+        edges {
+          node {
+            artist
+            artwork_url
+            audio_url
+            title
+            slug
+          }
+        }
+      }
     }
   `)
   const children = props.children
-
   return (
     <>
       <GlobalStyles />
@@ -24,6 +38,7 @@ const Layout = props => {
       <Header
         location={props.location}
         siteTitle={data.site.siteMetadata?.title || `Title`}
+        latestEpisode={data.latestEpisode.edges[0]}
       />
       <main>{children}</main>
       <Footer />

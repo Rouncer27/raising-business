@@ -144,7 +144,9 @@ const HeaderStyled = styled.header`
 
 const Header = props => {
   const siteTitle = props.siteTitle
+  const { latestEpisode } = props
   const absPosition = props?.location?.pathname === "/" ? true : false
+
   return (
     <HeaderStyled absPosition={absPosition}>
       <div className="wrapper">
@@ -168,7 +170,7 @@ const Header = props => {
           </button>
           <Link
             className="callToAct"
-            to="/episodes/rab-002-why-is-storytelling-so-important"
+            to={`/episodes/${latestEpisode.node.slug}`}
           >
             Listen To The Podcast
           </Link>

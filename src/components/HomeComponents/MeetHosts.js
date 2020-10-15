@@ -142,7 +142,7 @@ const MeetHostsStyled = styled.section`
   }
 `
 
-const MeetHosts = () => {
+const MeetHosts = ({ latestEpisode }) => {
   return (
     <MeetHostsStyled>
       <MeetBackground />
@@ -201,7 +201,7 @@ const MeetHosts = () => {
             share everything with you.{" "}
           </p>
           <div className="meetTogether__link">
-            <Link to="/episodes/rab-002-why-is-storytelling-so-important">
+            <Link to={`/episodes/${latestEpisode.node.slug}`}>
               Listen to the podcast
             </Link>
           </div>
