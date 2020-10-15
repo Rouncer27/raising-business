@@ -70,5 +70,12 @@ module.exports = {
         siteUrl: `https://raisingabusiness.com/`,
       },
     },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-96581344-1",
+        head: true,
+      },
+    },
   ],
 }
