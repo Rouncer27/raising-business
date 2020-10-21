@@ -115,7 +115,7 @@ const Footer = () => {
           <div className="footerGuest__social">
             <p>
               Check out our social media or email us at
-              podcast@raisingabusiness.ca on why you want to be a guest on an
+              <a href="mailto: hello@raisingabusiness.com">hello@raisingabusiness.com</a> on why you want to be a guest on an
               upcoming episode or if you'd like to be a sponsor.
             </p>
             <ul className="footerGuest__social--icons">
