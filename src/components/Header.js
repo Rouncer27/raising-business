@@ -160,14 +160,15 @@ const Header = props => {
         </div>
         <nav className="mainNav">
           <Link to="/episodes">Episodes</Link>
-          <button
+          <Link to="/download-guide">Download Guide</Link>
+          {/* <button
             type="button"
             onClick={() => {
               scrollTo(`#contactFooter`)
             }}
           >
             Contact
-          </button>
+          </button> */}
           <Link
             className="callToAct"
             to={`/episodes/${latestEpisode.node.slug}`}

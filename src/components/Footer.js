@@ -22,6 +22,8 @@ const FooterStyled = styled.footer`
 
     h3 {
       ${H2Brown};
+      margin: 0;
+      padding-left: 1rem;
       font-weight: bold;
       text-transform: uppercase;
     }
@@ -102,7 +104,7 @@ const Footer = () => {
       <FooterWave />
       <div className="wrapper">
         <div className="footerContact">
-          <h3>Sign up for future guides &#8226; Worksheets</h3>
+          <h3>Get The Guide Now!</h3>
           <MailChimpForm />
         </div>
         <div className="footerGuest">

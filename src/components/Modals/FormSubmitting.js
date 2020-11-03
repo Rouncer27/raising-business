@@ -2,6 +2,7 @@ import React from "react"
 import styled from "styled-components"
 
 import { BtnMain } from "../../styles/helpers"
+import SpinnerAnimation from "../Loaders/SpinnerAnimation"
 
 const SubmittingStyled = styled.div`
   position: fixed;
@@ -31,6 +32,16 @@ const SubmittingStyled = styled.div`
     border-radius: 0.5rem;
     text-align: center;
 
+    .loaderAnimation {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-self: center;
+      width: 100%;
+      height: 3.5rem;
+      margin: 0 auto;
+    }
+
     button {
       ${BtnMain};
     }
@@ -48,6 +59,9 @@ const FormSubmitting = () => {
     <SubmittingStyled>
       <div className="submit-wrapper">
         <div className="submit-content">
+          <div className="loaderAnimation">
+            <SpinnerAnimation />
+          </div>
           <p>Your form is being validated and submitted.</p>
           <div className="loader"></div>
         </div>

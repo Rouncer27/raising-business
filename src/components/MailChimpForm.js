@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import addToMailchimp from "gatsby-plugin-mailchimp"
 import styled from "styled-components"
-import { BtnMain, fontSizer } from "../styles/helpers"
+import { B1Pine, BtnMain, fontSizer } from "../styles/helpers"
 
 import FormSuccess from "./Modals/FormSuccess"
 import FormError from "./Modals/FormError"
@@ -71,6 +71,14 @@ const FormStyled = styled.form`
   margin-right: auto;
   margin-left: 0;
   margin-bottom: 5rem;
+`
+
+const SmashPara = styled.p`
+  ${B1Pine};
+  width: 100%;
+  margin-top: 2rem;
+  margin-bottom: 0;
+  padding-left: 1rem;
 `
 
 const MailChimpForm = () => {
@@ -201,7 +209,7 @@ const MailChimpForm = () => {
         />
       </IntputStyled>
       <InputButtonStyled className="download-form--btn">
-        <button type="submit">Sign Up</button>
+        <button type="submit">Drive Your Business!</button>
       </InputButtonStyled>
       {formFeilds.submitting && <FormSubmitting />}
       {formFeilds.errorWarnDisplay && (
@@ -213,6 +221,10 @@ const MailChimpForm = () => {
       {formFeilds.success && (
         <FormSuccess successAndClearForm={successAndClearForm} />
       )}
+      <SmashPara>
+        Smash your quarterly goals, while making it feel more effortless and
+        natural.
+      </SmashPara>
     </FormStyled>
   )
 }
