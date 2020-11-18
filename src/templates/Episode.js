@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import styled from "styled-components"
-import { standardWrapper, H2White, H2Pine, B1Pine } from "../styles/helpers"
+import { standardWrapper, H2Pine, B1Pine } from "../styles/helpers"
 import AudioPlayer from "react-h5-audio-player"
 import "react-h5-audio-player/lib/styles.css"
 import MobileNav from "../components/MobileNav/MobileNav"

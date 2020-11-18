@@ -30,7 +30,6 @@ export default React.memo(
           "https://twitter.com/raisingabiz",
         ],
         url: "https://raisingabusiness.com/",
-        image: image,
         description: description,
       },
     ]

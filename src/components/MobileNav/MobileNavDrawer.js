@@ -100,6 +100,7 @@ const MobileNavDrawer = ({ isOpen, location }) => {
         <MobileNavStyled>
           <Link to="/">Home</Link>
           <Link to="/episodes">Episodes</Link>
+          <Link to="/download-guide">Download Guide</Link>
           <Link
             className="callToAct"
             to="/episodes/rab-002-why-is-storytelling-so-important"

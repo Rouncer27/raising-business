@@ -4,7 +4,6 @@ import styled from "styled-components"
 import Logo from "./Logos/Logo"
 import { medWrapper, B2LightGreen, BtnMainAlt } from "../styles/helpers/index"
 import HeaderAlt from "./Graphics/HeaderAlt"
-import scrollTo from "gatsby-plugin-smoothscroll"
 
 const HeaderStyled = styled.header`
   position: ${props => (props.absPosition ? "absolute" : "relative")};
@@ -161,14 +160,6 @@ const Header = props => {
         <nav className="mainNav">
           <Link to="/episodes">Episodes</Link>
           <Link to="/download-guide">Download Guide</Link>
-          {/* <button
-            type="button"
-            onClick={() => {
-              scrollTo(`#contactFooter`)
-            }}
-          >
-            Contact
-          </button> */}
           <Link
             className="callToAct"
             to={`/episodes/${latestEpisode.node.slug}`}
