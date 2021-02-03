@@ -26,16 +26,17 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `Raising A Business Podcast`,
+        description: "Raising A Business Podcast. Everyone has a story.",
+        short_name: `RABPodcast`,
         start_url: `/`,
         background_color: `#276a39`,
         theme_color: `#276a39`,
-        display: `minimal-ui`,
+        display: `standalone`,
         icon: `src/images/favicon.png`, // This path is relative to the root of the site.
       },
     },
-
+    `gatsby-plugin-offline`,
     {
       resolve: "gatsby-plugin-mailchimp",
       options: {
