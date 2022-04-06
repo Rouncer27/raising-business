@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
-import Img from "gatsby-image"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import styled from "styled-components"
 
 const DownloadGuideImageStyled = styled.div`
@@ -12,9 +12,7 @@ const getData = graphql`
   {
     download: file(relativePath: { eq: "5-tips-to-drive-biz-cover.png" }) {
       childImageSharp {
-        fluid(quality: 100, maxWidth: 1500) {
-          ...GatsbyImageSharpFluid_withWebp
-        }
+        gatsbyImageData(width: 1500)
       }
     }
   }
@@ -22,12 +20,14 @@ const getData = graphql`
 
 const DownloadGuideImage = () => {
   const data = useStaticQuery(getData)
-  const imageData = data.download.childImageSharp.fluid
+  const imageDisplay = getImage(data.download.childImageSharp.gatsbyImageData)
   return (
     <DownloadGuideImageStyled>
-      <Img
-        fluid={imageData}
-        alt="Download Guide - Raising A Business Podcast"
+      <GatsbyImage
+        image={imageDisplay}
+        alt="Raising A Business Podcast"
+        layout="fullWidth"
+        formats={["auto", "webp", "avif"]}
       />
     </DownloadGuideImageStyled>
   )

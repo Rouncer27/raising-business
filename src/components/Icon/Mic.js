@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
-import Img from "gatsby-image"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import styled from "styled-components"
 
 const LogoStyled = styled.div`
@@ -12,9 +12,7 @@ const getData = graphql`
   {
     logo: file(relativePath: { eq: "icon-mic.png" }) {
       childImageSharp {
-        fluid(quality: 100, maxWidth: 300) {
-          ...GatsbyImageSharpFluid_withWebp
-        }
+        gatsbyImageData(width: 300)
       }
     }
   }
@@ -22,10 +20,15 @@ const getData = graphql`
 
 const Mic = () => {
   const data = useStaticQuery(getData)
-  const imageData = data.logo.childImageSharp.fluid
+  const imageDisplay = getImage(data.logo.childImageSharp.gatsbyImageData)
   return (
     <LogoStyled>
-      <Img fluid={imageData} alt="Mic Icon - Raising A Business Podcast" />
+      <GatsbyImage
+        image={imageDisplay}
+        alt="Raising A Business Podcast"
+        layout="fullWidth"
+        formats={["auto", "webp", "avif"]}
+      />
     </LogoStyled>
   )
 }

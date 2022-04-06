@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
-import Img from "gatsby-image"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import styled from "styled-components"
 
 const DarkGreenTopStyled = styled.div`
@@ -14,9 +14,7 @@ const getData = graphql`
       relativePath: { eq: "raising-a-business-background-dark-green.jpg" }
     ) {
       childImageSharp {
-        fluid(quality: 100, maxWidth: 2500) {
-          ...GatsbyImageSharpFluid_withWebp
-        }
+        gatsbyImageData(width: 2500)
       }
     }
   }
@@ -24,10 +22,15 @@ const getData = graphql`
 
 const DarkGreenTop = () => {
   const data = useStaticQuery(getData)
-  const imageData = data.background.childImageSharp.fluid
+  const imageDisplay = getImage(data.background.childImageSharp.gatsbyImageData)
   return (
     <DarkGreenTopStyled>
-      <Img fluid={imageData} alt="Raising A Business Podcast" />
+      <GatsbyImage
+        image={imageDisplay}
+        alt="Raising A Business Podcast"
+        layout="fullWidth"
+        formats={["auto", "webp", "avif"]}
+      />
     </DarkGreenTopStyled>
   )
 }

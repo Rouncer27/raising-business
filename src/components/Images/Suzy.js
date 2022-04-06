@@ -1,6 +1,7 @@
 import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
-import Img from "gatsby-image"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
+
 import styled from "styled-components"
 
 const SuzyStyled = styled.div`
@@ -12,9 +13,7 @@ const getData = graphql`
   {
     suzy: file(relativePath: { eq: "suzy-rounce.png" }) {
       childImageSharp {
-        fluid(quality: 100, maxWidth: 850) {
-          ...GatsbyImageSharpFluid_withWebp
-        }
+        gatsbyImageData(width: 1250)
       }
     }
   }
@@ -22,10 +21,16 @@ const getData = graphql`
 
 const Suzy = () => {
   const data = useStaticQuery(getData)
-  const imageData = data.suzy.childImageSharp.fluid
+  const imageDisplay = getImage(data.suzy.childImageSharp.gatsbyImageData)
+
   return (
     <SuzyStyled>
-      <Img fluid={imageData} alt="Suzy Rounce - Raising A Business Podcast" />
+      <GatsbyImage
+        image={imageDisplay}
+        alt="Suzy Rounce - Raising A Business Podcast"
+        layout="fullWidth"
+        formats={["auto", "webp", "avif"]}
+      />
     </SuzyStyled>
   )
 }
