@@ -149,6 +149,7 @@ const EpisodesPage = props => {
 export const homeQuery = graphql`
   {
     allEpisodes: allBuzzsproutPodcastEpisode(
+      sort: { order: DESC, fields: title }
       filter: { private: { eq: false } }
     ) {
       edges {
