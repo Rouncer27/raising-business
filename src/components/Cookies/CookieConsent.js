@@ -67,8 +67,7 @@ const CookieConsent = () => {
   const [isMounted, setIsMounted] = useState(false)
 
   const isBrowser = typeof window !== "undefined"
-  let functionsLoaded =
-    typeof window.getCookieConsent === "function" ? true : false
+  let functionsLoaded = false
 
   const handleAccept = () => {
     if (!isBrowser) {
@@ -92,7 +91,6 @@ const CookieConsent = () => {
   }
 
   useEffect(() => {
-    console.log("RUNNING")
     if (!isBrowser) {
       return
     }
