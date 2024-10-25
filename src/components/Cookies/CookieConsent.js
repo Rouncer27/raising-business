@@ -65,9 +65,9 @@ const CookieConsentStyled = styled.div`
 const CookieConsent = () => {
   const [cookies, setCookies] = useState("unk")
   const [isMounted, setIsMounted] = useState(false)
+  const [isFunctionsLoaded, setIsFunctionsLoaded] = useState(false)
 
   const isBrowser = typeof window !== "undefined"
-  let functionsLoaded = false
 
   const handleAccept = () => {
     if (!isBrowser) {
@@ -96,14 +96,17 @@ const CookieConsent = () => {
       return
     }
     console.log("Run Two")
-    functionsLoaded =
-      typeof window.getCookieConsent === "function" ? true : false
+    setIsFunctionsLoaded(
+      typeof window.getCookieConsent !== "undefined" ? true : false
+    )
     // get cookie approval after component is mounted
-    if (functionsLoaded) {
+    console.log("functionsLoaded: ", isFunctionsLoaded)
+
+    if (isFunctionsLoaded) {
       setIsMounted(true)
       setCookies(window.getCookieConsent())
     }
-  }, [functionsLoaded])
+  }, [isFunctionsLoaded])
 
   const banner = isMounted ? (
     <CookieConsentStyled>
