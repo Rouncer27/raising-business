@@ -47,6 +47,7 @@ const Layout = props => {
         siteTitle={data.site.siteMetadata?.title || `Title`}
         latestEpisode={data.latestEpisode.edges[0]}
       />
+
       <main>{children}</main>
       <CookieConsent />
       <Footer />
