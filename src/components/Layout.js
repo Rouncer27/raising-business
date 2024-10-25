@@ -1,8 +1,9 @@
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql, Script } from "gatsby"
 
 import Header from "./Header"
 import Footer from "./Footer"
+import CookieConsent from "./Cookies/CookieConsent"
 import GlobalStyles from "../styles/GlobalStyles"
 
 const Layout = props => {
@@ -33,6 +34,7 @@ const Layout = props => {
   const children = props.children
   return (
     <>
+      <Script src="./scripts/cookies.js" />
       <GlobalStyles />
 
       <Header
@@ -41,6 +43,7 @@ const Layout = props => {
         latestEpisode={data.latestEpisode.edges[0]}
       />
       <main>{children}</main>
+      <CookieConsent />
       <Footer />
     </>
   )
