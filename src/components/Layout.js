@@ -38,8 +38,8 @@ const Layout = props => {
         async
         src="https://www.googletagmanager.com/gtag/js?id=G-PMXLMD36X9"
       />
-      <Script src="./scripts/ga.js" />
-      <Script src="./scripts/cookies.js" />
+      <Script src="/scripts/ga.js" />
+      <Script src="/scripts/cookies.js" />
       <GlobalStyles />
 
       <Header

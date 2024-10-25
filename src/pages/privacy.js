@@ -156,10 +156,10 @@ const privacy = () => {
             <a href="mailto:raisingabuisness@gmail.com">
               raisingabuisness@gmail.com
             </a>
-            <div class="title">
+            <div className="title">
               <h1>Disclaimer</h1>
             </div>
-            <section class="BaseWysiwyg__StyledSection-sc-1a5z89p-0 fjKHUs">
+            <section className="BaseWysiwyg__StyledSection-sc-1a5z89p-0 fjKHUs">
               <div>
                 The information contained in this website is for general
                 information purposes only. This website makes no representations
