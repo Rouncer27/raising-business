@@ -34,6 +34,11 @@ const Layout = props => {
   const children = props.children
   return (
     <>
+      <Script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=G-PMXLMD36X9"
+      />
+      <Script src="./scripts/ga.js" />
       <Script src="./scripts/cookies.js" />
       <GlobalStyles />
 

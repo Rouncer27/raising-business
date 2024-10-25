@@ -70,14 +70,5 @@ module.exports = {
         siteUrl: `https://raisingabusiness.com/`,
       },
     },
-    {
-      resolve: `gatsby-plugin-google-gtag`,
-      options: {
-        trackingIds: ["G-PMXLMD36X9"],
-      },
-      pluginConfig: {
-        head: true,
-      },
-    },
   ],
 }
