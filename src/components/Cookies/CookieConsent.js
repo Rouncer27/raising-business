@@ -94,7 +94,9 @@ const CookieConsent = () => {
     }
     setIsMounted(true)
     // get cookie approval after component is mounted
-    setCookies(window.getCookieConsent())
+    if (typeof window.getCookieConsent === "function") {
+      setCookies(window.getCookieConsent())
+    }
   }, [])
 
   const banner = isMounted ? (
