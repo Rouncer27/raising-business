@@ -91,9 +91,11 @@ const CookieConsent = () => {
   }
 
   useEffect(() => {
+    console.log("Run One")
     if (!isBrowser) {
       return
     }
+    console.log("Run Two")
     functionsLoaded =
       typeof window.getCookieConsent === "function" ? true : false
     // get cookie approval after component is mounted
