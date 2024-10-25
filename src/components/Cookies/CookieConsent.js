@@ -90,15 +90,23 @@ const CookieConsent = () => {
     document.cookie = "cookie-consent=denied; path=/"
   }
 
+  const checkForFuctions = () => {
+    setIsFunctionsLoaded(
+      typeof window.getCookieConsent !== "undefined" ? true : false
+    )
+  }
+
   useEffect(() => {
     console.log("Run One")
     if (!isBrowser) {
       return
     }
+
+    setTimeout(() => {
+      checkForFuctions()
+    }, 1000)
     console.log("Run Two")
-    setIsFunctionsLoaded(
-      typeof window.getCookieConsent !== "undefined" ? true : false
-    )
+
     // get cookie approval after component is mounted
     console.log("functionsLoaded: ", isFunctionsLoaded)
 
