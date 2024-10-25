@@ -63,11 +63,14 @@ const CookieConsentStyled = styled.div`
 `
 
 const CookieConsent = () => {
-  console.log("What is the window:", window)
   const [cookies, setCookies] = useState("unk")
   const [isMounted, setIsMounted] = useState(false)
+  const isBrowser = typeof window !== "undefined"
 
   const handleAccept = () => {
+    if (!isBrowser) {
+      return
+    }
     setCookies("granted")
     // // accepted cookie lasts for a year
     let d = new Date()
@@ -77,12 +80,18 @@ const CookieConsent = () => {
   }
 
   const handleDecline = () => {
+    if (!isBrowser) {
+      return
+    }
     setCookies("denied")
     // declined cookie only lasts for the session
     document.cookie = "cookie-consent=denied; path=/"
   }
 
   useEffect(() => {
+    if (!isBrowser) {
+      return
+    }
     setIsMounted(true)
     // get cookie approval after component is mounted
     setCookies(window.getCookieConsent())
