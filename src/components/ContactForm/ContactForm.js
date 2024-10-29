@@ -75,9 +75,9 @@ const ContactForm = () => {
         body: encode({ "form-name": "contact", ...formData }),
       })
 
-      console.log(response)
+      console.log(response.ok)
 
-      if (response) {
+      if (response.ok) {
         console.log("Success: ", response)
         setFormStatus({
           ...formStatus,
@@ -87,6 +87,8 @@ const ContactForm = () => {
           errors: [],
         })
         clearFormFields()
+      } else {
+        throw new Error(`Contact Form was not sent - ${response.statusText}`)
       }
     } catch (error) {
       console.log("error: ", error)

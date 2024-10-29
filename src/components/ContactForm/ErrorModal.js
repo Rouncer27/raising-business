@@ -99,9 +99,9 @@ const LoadingModal = styled.div`
 `
 
 const ErrorModal = ({ errorMessage, handleErrorModalClose }) => {
-  console.log("{errorMessage}", errorMessage)
+  console.log("error: ", errorMessage.toString())
   return (
-    <LoadingModal feedback={true}>
+    <LoadingModal>
       <div className="innerLoading">
         <p>
           If seems that there is a few errors with submitting your form.
@@ -109,7 +109,8 @@ const ErrorModal = ({ errorMessage, handleErrorModalClose }) => {
           Please try again, or you can email us directly by clicking{" "}
           <a href="#">Here</a>
           <br />
-          Error:
+          <br />
+          {errorMessage.toString()}
         </p>
         <div className="close-button">
           <button onClick={() => handleErrorModalClose()} type="button">

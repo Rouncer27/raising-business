@@ -97,7 +97,7 @@ const CookieConsent = () => {
   }
 
   useEffect(() => {
-    console.log("Run One")
+    // console.log("Run One")
     if (!isBrowser) {
       return
     }
@@ -105,10 +105,10 @@ const CookieConsent = () => {
     setTimeout(() => {
       checkForFuctions()
     }, 1000)
-    console.log("Run Two")
+    // console.log("Run Two")
 
     // get cookie approval after component is mounted
-    console.log("functionsLoaded: ", isFunctionsLoaded)
+    // console.log("functionsLoaded: ", isFunctionsLoaded)
 
     if (isFunctionsLoaded) {
       setIsMounted(true)
