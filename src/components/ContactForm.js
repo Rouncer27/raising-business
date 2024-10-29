@@ -2,7 +2,13 @@ import React from "react"
 
 const ContactForm = () => {
   return (
-    <form name="contact" method="post" data-netlify="true" onSubmit="submit">
+    <form
+      name="contact"
+      method="post"
+      data-netlify="true"
+      netlify
+      onSubmit="submit"
+    >
       <input type="hidden" name="form-name" value="contact" />
       <div>
         <label>
