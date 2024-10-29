@@ -4,7 +4,7 @@ import MobileNav from "../components/MobileNav/MobileNav"
 import styled from "styled-components"
 import { medWrapper } from "../styles/helpers"
 import { standardWysiwyg } from "../styles/helpers/wysiwyg"
-import ContactForm from "../components/ContactForm"
+import ContactForm from "../components/ContactForm/ContactForm"
 
 const PrivacyStyled = styled.div`
   width: 100%;
