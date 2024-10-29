@@ -57,7 +57,7 @@ const ContactForm = () => {
       .join("&")
   }
 
-  const handleSubmit = e => {
+  const handleSubmit = async e => {
     e.preventDefault()
 
     setFormStatus(prevState => {
@@ -68,12 +68,17 @@ const ContactForm = () => {
       }
     })
 
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({ "form-name": "contact", ...formData }),
-    })
-      .then(() => {
+    try {
+      const response = await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encode({ "form-name": "contact", ...formData }),
+      })
+
+      console.log(response)
+
+      if (response) {
+        console.log("Success: ", response)
         setFormStatus({
           ...formStatus,
           submitting: false,
@@ -82,16 +87,43 @@ const ContactForm = () => {
           errors: [],
         })
         clearFormFields()
+      }
+    } catch (error) {
+      console.log("error: ", error)
+      setFormStatus({
+        ...formStatus,
+        submitting: false,
+        errorWarnDisplay: true,
+        success: false,
+        error,
       })
-      .catch(error => {
-        setFormStatus({
-          ...formStatus,
-          submitting: false,
-          errorWarnDisplay: true,
-          success: false,
-          error,
-        })
-      })
+    }
+
+    // fetch("/", {
+    //   method: "POST",
+    //   headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    //   body: encode({ "form-name": "contact", ...formData }),
+    // })
+    //   .then(() => {
+
+    //     setFormStatus({
+    //       ...formStatus,
+    //       submitting: false,
+    //       errorWarnDisplay: false,
+    //       success: true,
+    //       errors: [],
+    //     })
+    //     clearFormFields()
+    //   })
+    //   .catch(error => {
+    //     setFormStatus({
+    //       ...formStatus,
+    //       submitting: false,
+    //       errorWarnDisplay: true,
+    //       success: false,
+    //       error,
+    //     })
+    //   })
   }
 
   const handleOnChange = event => {

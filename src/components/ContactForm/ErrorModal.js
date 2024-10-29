@@ -74,7 +74,7 @@ const LoadingModal = styled.div`
     }
 
     p {
-      color: #fff;
+      color: #000;
       width: 100%;
       margin: 0;
       padding: 5rem 2rem;
@@ -84,7 +84,7 @@ const LoadingModal = styled.div`
     }
 
     a {
-      color: #fff;
+      color: #000;
     }
 
     &__spinner {
