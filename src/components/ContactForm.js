@@ -40,7 +40,7 @@ const ContactForm = () => {
           First Name <br />
           <input
             type="text"
-            name="first-name"
+            name="firstName"
             value={formData.firstName}
             onChange={e => handleOnChange(e)}
           />
