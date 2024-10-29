@@ -74,11 +74,8 @@ const ContactForm = () => {
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: encode({ "form-name": "contact", ...formData }),
       })
-
-      console.log(response.ok)
-
+      console.log("response: ", response)
       if (response.ok) {
-        console.log("Success: ", response)
         setFormStatus({
           ...formStatus,
           submitting: false,
@@ -147,6 +144,7 @@ const ContactForm = () => {
               name="firstName"
               value={formData.firstName}
               onChange={e => handleOnChange(e)}
+              required={true}
             />
           </label>
         </div>
@@ -160,6 +158,7 @@ const ContactForm = () => {
             name="email"
             value={formData.email}
             onChange={e => handleOnChange(e)}
+            required={true}
           />
         </div>
 
@@ -172,6 +171,7 @@ const ContactForm = () => {
               cols="40"
               value={formData.comments}
               onChange={e => handleOnChange(e)}
+              required={true}
             ></textarea>
           </label>
         </div>
