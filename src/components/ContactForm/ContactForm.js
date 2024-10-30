@@ -70,12 +70,18 @@ const ContactForm = () => {
     })
 
     try {
-      const response = await fetch("/", {
+      // const response = await fetch("/", {
+      //   method: "POST",
+      //   headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      //   body: encode({ "form-name": "contact", ...formData }),
+      // })
+
+      const response = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: encode({ "form-name": "contact", ...formData }),
       })
-      console.log("response: ", response)
+
       if (response.ok) {
         setFormStatus({
           ...formStatus,
