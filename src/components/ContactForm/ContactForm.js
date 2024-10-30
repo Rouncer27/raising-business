@@ -88,6 +88,7 @@ const ContactForm = () => {
       })
 
       console.log("response", response)
+      console.log("response.body", JSON.parse(response.body))
 
       if (response.ok) {
         setFormStatus({
