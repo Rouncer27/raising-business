@@ -82,6 +82,8 @@ const ContactForm = () => {
         body: encode({ "form-name": "contact", ...formData }),
       })
 
+      console.log("response", response)
+
       if (response.ok) {
         setFormStatus({
           ...formStatus,
