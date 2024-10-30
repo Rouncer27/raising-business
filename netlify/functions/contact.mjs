@@ -6,7 +6,7 @@ exports.handler = async function (req, context) {
 
   const response = await fetch(FORM_POST_URL, {
     method: "POST",
-    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    headers: { "Content-Type": "multipart/form-data" },
     body: formData,
   })
 
