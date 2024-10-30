@@ -12,10 +12,7 @@ exports.handler = async function (req, context) {
   })
 
   const response = await axios.post(FORM_POST_URL, formData, config)
-
-  console.log("response.status: ", response.status)
-  console.log("response.data: ", response.data)
-
+  
   return {
     statusCode: response.status,
     body: JSON.stringify({
