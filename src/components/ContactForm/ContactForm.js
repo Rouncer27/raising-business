@@ -84,7 +84,7 @@ const ContactForm = () => {
 
       const response = await fetch("/.netlify/functions/contact", {
         method: "POST",
-        body: encode({ ...formData }),,
+        body: encode({ ...formData }),
       })
 
       console.log("response", response)
