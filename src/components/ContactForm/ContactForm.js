@@ -88,9 +88,9 @@ const ContactForm = () => {
       }).then(response => response.json())
 
       console.log("response", response)
-      console.log("response.body", response.body)
+      console.log("response.body", response.data)
 
-      if (response.ok) {
+      if (response.data.status === "mail_sent") {
         setFormStatus({
           ...formStatus,
           submitting: false,
