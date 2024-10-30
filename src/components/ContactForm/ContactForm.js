@@ -8,7 +8,7 @@ const ContactForm = () => {
   //bump
   const [formData, setFormData] = useState({
     firstName: "",
-    email: "",
+    yourEmail: "",
     comments: "",
   })
 
@@ -16,7 +16,7 @@ const ContactForm = () => {
     submitting: false,
     errorWarnDisplay: false,
     success: false,
-    error: null,
+    yourEmail: null,
     captachError: false,
   })
 
@@ -46,7 +46,7 @@ const ContactForm = () => {
     setFormData(() => {
       return {
         firstName: "",
-        email: "",
+        yourEmail: "",
         comments: "",
       }
     })
@@ -79,7 +79,7 @@ const ContactForm = () => {
       const response = await fetch("/.netlify/functions/contact", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: encode({ "form-name": "contact", ...formData }),
+        body: encode({ ...formData }),
       })
 
       console.log("response", response)
@@ -159,13 +159,13 @@ const ContactForm = () => {
         </div>
 
         <div>
-          <label htmlFor="email">Email</label>
+          <label htmlFor="yourEmail">Email</label>
           <br />
           <input
-            id="email"
+            id="yourEmail"
             type="email"
-            name="email"
-            value={formData.email}
+            name="yourEmail"
+            value={formData.yourEmail}
             onChange={e => handleOnChange(e)}
             required={true}
           />
