@@ -1,8 +1,9 @@
 exports.handler = async function (req, context) {
-  console.log("req: ", req.body)
+  console.log("req Type:  ", typeof req.body)
+  console.log("req : ", req.body)
   const FORM_POST_URL = `https://rab.swbcreative.ca/wp-json/contact-form-7/v1/contact-forms/165/feedback`
   const formData = JSON.parse(req.body)
-  
+
   console.log("formData: ", formData)
 
   const response = await fetch(FORM_POST_URL, {
