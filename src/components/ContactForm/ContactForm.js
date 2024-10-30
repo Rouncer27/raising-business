@@ -76,10 +76,16 @@ const ContactForm = () => {
       //   body: encode({ "form-name": "contact", ...formData }),
       // })
 
+      const formDataArray = Object.entries(formData)
+      const bodyFormData = new FormData()
+      formDataArray.forEach(field => {
+        bodyFormData.append(field[0], field[1])
+      })
+
       const response = await fetch("/.netlify/functions/contact", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: formData,
+        body: bodyFormData,
       })
 
       console.log("response", response)
