@@ -6,10 +6,16 @@ exports.handler = async function (req, context) {
 
   console.log("formData: ", formData)
 
+  const formDataArray = Object.entries(formData)
+  const bodyFormData = new FormData()
+  formDataArray.forEach(field => {
+    bodyFormData.append(field[0], field[1])
+  })
+
   const response = await fetch(FORM_POST_URL, {
     method: "POST",
     headers: { "Content-Type": "multipart/form-data" },
-    body: formData,
+    body: bodyFormData,
   })
 
   console.log("response: ", response)
