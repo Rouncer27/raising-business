@@ -18,6 +18,8 @@ exports.handler = async function (req, context) {
 
   return {
     statusCode: response.status,
-    body: JSON.stringify( response.data ),
+    body: JSON.stringify({
+      data: response.data
+    }),
   }
 }
