@@ -76,7 +76,7 @@ const ContactForm = () => {
       //   body: encode({ "form-name": "contact", ...formData }),
       // })
 
-      const response = await fetch("/api/contact", {
+      const response = await fetch("/.netlify/functions/contact", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: encode({ "form-name": "contact", ...formData }),
